@@ -8,11 +8,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
+        background: "#282C33",
         foreground: "var(--foreground)",
+        primary: "#C778DD",
+        grayish: "#ABB2BF",
       },
       boxShadow: {
         "custom": "0 20px 25px var(--shadow-color), 0 10px 10px -5px var(--shadow-color)",
+      },
+      fontFamily: {
+        allertaStencil: ['var(--font-allerta-stencil)'],
       },
     },
   },
