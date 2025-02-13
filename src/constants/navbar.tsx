@@ -1,0 +1,96 @@
+import { ReactNode } from "react";
+import { MdOutlineExplore, MdMiscellaneousServices, MdOutlineFeed, MdOutlineMailOutline } from "react-icons/md";
+import { FiShoppingCart } from "react-icons/fi";
+import { LiaProjectDiagramSolid } from "react-icons/lia";
+import { BiFace } from "react-icons/bi";
+import { TfiThought } from "react-icons/tfi";
+import { PiStack } from "react-icons/pi";
+import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
+
+export type NavItem = {
+  title: string;
+  href: string;
+  keyNav: string;
+  icon: ReactNode;
+};
+
+export const navigation: NavItem[] = [
+  {
+    title: "Explore",
+    href: "/",
+    keyNav: "1",
+    icon: <MdOutlineExplore className="size-6 p-0 box-content" />
+  },
+  {
+    title: "Boutique",
+    href: "/boutique",
+    keyNav: "2",
+    icon: <FiShoppingCart className="size-6 p-0 box-content" />
+  },
+  {
+    title: "Projects",
+    href: "/projects",
+    keyNav: "3",
+    icon: <LiaProjectDiagramSolid className="size-6 p-0 box-content" />
+  },
+  {
+    title: "Services",
+    href: "/services",
+    keyNav: "4",
+    icon: <MdMiscellaneousServices className="size-6 p-0 box-content" />
+  },
+  {
+    title: "About",
+    href: "/about",
+    keyNav: "5",
+    icon: <BiFace className="size-6 p-0 box-content" />
+  },
+]
+
+export const resourceNavigation: NavItem[] = [
+  {
+    title: "Feed",
+    href: "/feed",
+    keyNav: "6",
+    icon: <MdOutlineFeed className="size-6 p-0 box-content" />
+  },
+  {
+    title: "Thoughts",
+    href: "/thoughts",
+    keyNav: "7",
+    icon: <TfiThought className="size-6 p-0 box-content" />
+  },
+  {
+    title: "Stack",
+    href: "/stack",
+    keyNav: "8",
+    icon: <PiStack className="size-6 p-0 box-content" />
+  },
+]
+
+export const socialNavigation: NavItem[] = [
+  {
+    title: "Contact",
+    href: "/contact",
+    keyNav: "C",
+    icon: <MdOutlineMailOutline className="size-6 p-0 box-content" />
+  },
+  {
+    title: "Github",
+    keyNav: "G",
+    href: "https://github.com/saroj-2728",
+    icon: <FaGithub className="size-6 p-0 box-content" />,
+  },
+  {
+    title: "Linkedin",
+    keyNav: "L",
+    href: "https://www.linkedin.com/in/saroj27/",
+    icon: <FaLinkedin className="size-6 p-0 box-content" />,
+  },
+  {
+    title: "Instagram",
+    keyNav: "I",
+    href: "https://www.instagram.com/_._.saroj._._/",
+    icon: <FaInstagram className="size-6 p-0 box-content" />,
+  },
+]

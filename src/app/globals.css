@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #161616;
+  --accent: #1C1C1C;
+  --secondary: #A5A5A5;
+  --primary: #ffffff;
+  --icon: #2C2C2C;
+  --brd: #262626;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
