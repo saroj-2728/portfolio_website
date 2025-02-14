@@ -8,7 +8,11 @@ const KeyPressNavigation = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
-      console.log(event.key);
+      const target = event.target as HTMLElement;
+
+      if (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable) {
+        return;
+      }
       switch (event.key) {
         case "1":
           router.push("/");

@@ -14,6 +14,7 @@ export type NavItem = {
   icon: ReactNode;
 };
 
+// Navigation links
 export const navigation: NavItem[] = [
   {
     title: "Explore",

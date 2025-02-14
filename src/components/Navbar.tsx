@@ -3,12 +3,37 @@ import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation";
 import { IoIosSearch } from "react-icons/io";
-import { resourceNavigation, navigation, socialNavigation } from "@/constants/navbar";
+import { navigation, socialNavigation } from "@/constants/navbar";
 import type { NavItem } from "@/constants/navbar";
+import { MdOutlineFeed } from "react-icons/md";
+import { TfiThought } from "react-icons/tfi";
+import { PiStack } from "react-icons/pi";
 
 const Navbar = () => {
 
     const pathname = usePathname()
+
+    const resourceNavigation: NavItem[] = [
+        {
+            title: "Feed",
+            href: "/feed",
+            keyNav: "6",
+            icon: <MdOutlineFeed className="size-6 p-0 box-content" />
+        },
+        {
+            title: "Thoughts",
+            href: "/thoughts",
+            keyNav: "7",
+            icon: <TfiThought className="size-6 p-0 box-content" />
+        },
+        {
+            title: "Stack",
+            href: "/stack",
+            keyNav: "8",
+            icon: <PiStack className="size-6 p-0 box-content" />
+        },
+    ]
+
 
     return (
         <nav className="px-4 h-full flex flex-col overflow-hidden" role="navigation">
@@ -44,9 +69,9 @@ const Navbar = () => {
                     </ul>
                 </div>
 
-                {/* Resources */}
+                {/* Connect */}
                 <div className="space-y-4">
-                    <p className="text-[10px] ps-2.5 font-bold cursor-default">RESOURCES</p>
+                    <p className="text-[10px] ps-2.5 font-bold cursor-default">CONNECT</p>
                     <ul>
                         <NavLinks navLinks={socialNavigation} pathname={pathname} />
                     </ul>
