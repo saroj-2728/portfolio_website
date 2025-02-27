@@ -55,7 +55,7 @@ const Navbar = () => {
             </div>
 
             {/* Navigation Section */}
-            <div className="navigation space-y-8 overflow-y-auto flex-grow scrollbar-hidden">
+            <div className="navigation space-y-8 overflow-y-auto grow scrollbar-hidden">
                 {/* Basic nav links */}
                 <ul className="">
                     <NavLinks navLinks={navigation} pathname={pathname} />
@@ -85,7 +85,7 @@ const Navbar = () => {
                     <input
                         type="search"
                         placeholder="Search..."
-                        className="bg-icon w-full py-2 pl-10 pr-3 rounded-md border border-brd text-secondary focus:text-primary focus:outline-none cursor-pointer hover:placeholder:text-primary"
+                        className="bg-icon w-full py-2 pl-10 pr-3 rounded-md border border-brd text-secondary focus:text-primary focus:outline-hidden cursor-pointer hover:placeholder:text-primary"
                     />
                 </div>
             </div>
@@ -107,7 +107,7 @@ const NavLinks = ({ navLinks, pathname }: { navLinks: NavItem[], pathname: strin
                         <div className={`text-sm flex flex-row items-center justify-between gap-3`}>
                             {nav.icon}
                             <p className={`text-start w-[80%]`}>{nav.title}</p>
-                            <p className="px-1 text-sm border border-brd rounded-sm">{nav.keyNav}</p>
+                            <p className="px-1 text-sm border border-brd rounded-xs">{nav.keyNav}</p>
                         </div>
                     </Link>
                 </li>

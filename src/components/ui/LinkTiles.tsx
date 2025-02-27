@@ -22,8 +22,9 @@ const LinkTiles = ({ href, icon, mainText, secondaryText, imageSrc }: LinkTilesP
                         <Image
                             src={imageSrc}
                             alt={mainText}
-                            layout="fill"
-                            objectFit="cover"
+                            width={500}
+                            height={500}
+                            className="object-cover object-center h-full w-full"
                         />
                     </div>
                 )}

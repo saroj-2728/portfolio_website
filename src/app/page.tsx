@@ -7,6 +7,7 @@ import LinkTiles from "@/components/ui/LinkTiles";
 import FeedCard from "@/components/ui/FeedCard";
 import { newDrops, thoughts, cards, techStack } from "@/constants/home";
 import Link from "next/link";
+import NewsLetterSubscription from "@/components/NewsLetterSub";
 
 export default function Home() {
 
@@ -22,13 +23,13 @@ export default function Home() {
         <header className="me p-12 pb-0 space-y-6">
           <h1 className="text-5xl font-bold text-primary">Hey, I&apos;m Saroj. <br /> I design software.
           </h1>
-          <p className="mt-3 text-lg">
-            The Original Dashboard-Styled Personal Website Template for <br /> Framer just got a revamp – with Dashfolio NEO.
+          <p className="mt-3 text-lg max-w-xl">
+            The Original Dashboard-Styled Personal Website Template for Framer just got a revamp – with Dashfolio NEO.
           </p>
           <div className="flex items-center space-x-4 text-sm">
             <button
               onClick={() => router.push("/about")}
-              className="px-6 py-2.5 font-semibold bg-icon text-primary rounded-md hover:opacity-70 transition duration-[400ms]"
+              className="px-6 py-2.5 font-semibold bg-btn-primary text-background rounded-md hover:opacity-60 transition duration-[400ms] cursor-pointer"
             >
               About
             </button>
@@ -38,7 +39,7 @@ export default function Home() {
                 setCopied(true)
                 setTimeout(() => setCopied(false), 2000)
               }}
-              className="px-6 py-2.5 font-semibold text-primary border border-brd rounded-lg text-center align-middle hover:bg-accent hover:opacity-70 transition duration-[400ms]"
+              className="px-6 py-2.5 font-semibold text-primary border border-brd rounded-lg text-center align-middle hover:bg-btn-secondary hover:opacity-60 transition duration-[400ms] cursor-pointer"
             >
               <IoCopyOutline className={`size-4 text-secondary inline-block`} /> <span className={`${copied ? "text-secondary" : ""} `}>{copied ? "Copied" : "E-mail"}</span>
             </button>
@@ -93,7 +94,7 @@ export default function Home() {
             <NewsLetterSubscription
               mainText="Want more?"
               secondaryText="Subscribe to my newsletter to get updates on new content."
-              borderTopRounded={false}
+              className="rounded-b-md"
             />
           </div>
         </div>
@@ -114,7 +115,7 @@ export default function Home() {
         </div>
 
         {/* Stack */}
-        <div className="thoughts p-12 space-y-6">
+        <div className="thoughts p-12 pb-20 space-y-6">
           <div className="border border-brd rounded-md">
             <div className="p-3 flex flex-col gap-6">
               <div className="title p-4 pb-0">
@@ -134,13 +135,13 @@ export default function Home() {
                   ))
                 }
               </div>
-              <div className="p-3 pt-0 flex items-center justify-center w-full">
+              <div className="p-3 pt-0 flex items-center justify-center w-full rounded-md">
                 <Link
                   href="/stack"
                   className="text-primary w-full text-center border border-brd rounded-md hover:opacity-70 transition duration-[400ms]"
                 >
                   <div
-                    className="py-2.5 w-full bg-accent"
+                    className="py-2 w-full bg-accent"
                   >
                     View all
                   </div>
@@ -153,45 +154,3 @@ export default function Home() {
     </main>
   );
 }
-
-interface Props {
-  mainText: string;
-  secondaryText: string;
-  borderTopRounded: boolean;
-}
-
-const NewsLetterSubscription = ({ mainText, secondaryText, borderTopRounded }: Props) => {
-
-  const [email, setEmail] = useState<string>("")
-
-  const handleNewsLetterFormSubmission = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    console.log("Email submitted: ", email)
-  }
-
-  return (
-    <div className={`p-6 bg-accent flex flex-row flex-nowrap items-center justify-between gap-8 ${borderTopRounded ? "rounded-t-md" : ""}`}>
-      <div className="">
-        <h3 className="text-primary font-bold">{mainText}</h3>
-        <p className="text-secondary">{secondaryText}</p>
-      </div>
-      <div className="">
-        <form
-          onSubmit={handleNewsLetterFormSubmission}
-          className="flex flex-row flex-nowrap gap-2"
-        >
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Your email address"
-            className="p-2 focus:outline-none focus:border-white/20 border border-brd bg-transparent rounded-lg"
-          />
-          <button className="p-2 px-6 bg-icon text-primary rounded-lg hover:opacity-70 transition duration-[400ms]">Subscribe</button>
-        </form>
-      </div>
-    </div>
-  )
-}
-
-export { NewsLetterSubscription }

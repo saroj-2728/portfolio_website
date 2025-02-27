@@ -25,7 +25,7 @@ const FeedCard = ({ icon, title, description, href }: FeedCardProps) => {
                 <div>
                     <button
                         onClick={() => router.push(href)}
-                        className="p-2 px-6 bg-icon text-primary rounded-lg hover:opacity-70 transition duration-[400ms]"
+                        className="p-2 px-6 bg-icon text-primary rounded-lg hover:opacity-70 transition duration-[400ms] cursor-pointer"
                     >
                         View {title}
                     </button>

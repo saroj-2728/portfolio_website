@@ -3,6 +3,7 @@ import { LXGW_WenKai_TC } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import KeyPressNavigation from "@/components/KeyPressNav";
+import Footer from "@/components/Footer";
 
 const wenkaiFont = LXGW_WenKai_TC({
   weight: '400',
@@ -30,8 +31,11 @@ export default function RootLayout({
             <div className="sticky top-0 w-[240px] h-screen border-r border-brd bg-accent">
               <Navbar />
             </div>
-            <div className="flex-1 overflow-y-auto max-w-[1080px] mx-auto">
-              {children}
+            <div className="flex-1">
+              <div className="flex-1 overflow-y-auto max-w-[1080px] mx-auto">
+                {children}
+              </div>
+              <Footer />
             </div>
           </div>
         </KeyPressNavigation>
