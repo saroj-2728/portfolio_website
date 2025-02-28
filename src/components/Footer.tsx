@@ -1,8 +1,20 @@
+'use client'
+import { useState, useEffect } from "react";
 import Link from "next/link"
 import { FooterBlock, FooterLink } from "@/constants/footer"
 import { FaArrowRight } from "react-icons/fa6";
 
 const Footer = () => {
+
+    const [time, setTime] = useState(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }))
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setTime(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }))
+        }, 60 * 1000)
+        return () => clearInterval(interval)
+    }, [])
+
     return (
         <div className="flex flex-col items-center bg-accent w-full border-t border-brd">
             <footer className="w-full max-w-[960px] mx-auto">
@@ -32,7 +44,7 @@ const Footer = () => {
                             </Link>
                         </div>
                         <div className="time flex flex-row justify-start">
-                            <p className="text-[80px]">03:08 PM</p>
+                            <p className="text-[80px]">{time}</p>
                         </div>
                     </div>
                 </div>

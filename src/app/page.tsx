@@ -138,10 +138,10 @@ export default function Home() {
               <div className="p-3 pt-0 flex items-center justify-center w-full rounded-md">
                 <Link
                   href="/stack"
-                  className="text-primary w-full text-center border border-brd rounded-md hover:opacity-70 transition duration-[400ms]"
+                  className="text-primary w-full text-center border border-brd rounded-md hover:bg-btn-secondary hover:opacity-60 transition duration-[400ms]"
                 >
                   <div
-                    className="py-2 w-full bg-accent"
+                    className="py-2 w-full"
                   >
                     View all
                   </div>
