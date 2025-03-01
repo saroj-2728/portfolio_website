@@ -1,4 +1,5 @@
 import LinkCard from "@/components/ui/LinkCard";
+import LinkCardSkeleton from "@/components/skeletons/LinkCardSkeleton";
 import { newDrops } from "@/constants/home";
 
 const ProjectsPage = () => {
@@ -34,6 +35,7 @@ const ProjectsPage = () => {
                                 />
                             ))
                         }
+                        <LinkCardSkeleton />
                     </div>
                 </div>
             </div>

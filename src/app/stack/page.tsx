@@ -1,5 +1,6 @@
 'use client'
 import LinkTiles from "@/components/ui/LinkTiles"
+import LinkTilesSkeleton from "@/components/skeletons/LinkTilesSkeleton"
 // import Link from "next/link"
 import { techStack } from "@/constants/home"
 import NewsLetterSubscription from "@/components/NewsLetterSub"
@@ -38,6 +39,8 @@ const TechStack = () => {
                                         />
                                     ))
                                 }
+                                <LinkTilesSkeleton />
+                                <LinkTilesSkeleton />
                             </div>
                             {/* <div className="p-3 pt-0 flex items-center justify-center w-full">
                                 <Link

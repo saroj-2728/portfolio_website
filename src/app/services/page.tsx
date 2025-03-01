@@ -1,4 +1,5 @@
 import ServiceCard from "@/components/ui/ServiceCard"
+import ServiceCardSkeleton from "@/components/skeletons/ServiceCardSkeleton"
 import { services } from "@/constants/services"
 import type { ServiceType } from "@/constants/services"
 
@@ -28,6 +29,7 @@ const ServicesPage = () => {
               />
             ))
           }
+          <ServiceCardSkeleton />
         </div>
 
       </div>
