@@ -1,7 +1,7 @@
 import LinkCard from "@/components/ui/LinkCard";
 import { newDrops } from "@/constants/home";
 
-const Boutique = () => {
+const Achievements = () => {
     return (
         <main className="flex flex-col items-center min-h-screen pt-10">
             <div className="max-w-[960px] w-full mx-auto">
@@ -62,4 +62,4 @@ const Boutique = () => {
     )
 }
 
-export default Boutique
+export default Achievements

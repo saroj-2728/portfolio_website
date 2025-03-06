@@ -13,12 +13,13 @@ const LinkTiles = ({ href, icon, mainText, secondaryText, imageSrc }: LinkTilesP
     return (
         <Link
             href={href}
+            target="_blank"
             className="p-3 rounded-lg border border-transparent hover:border-brd hover:bg-accent transition duration-[400ms] ease-in-out"
         >
             <div className="flex flex-row flex-nowrap items-center justify-start gap-4">
                 {icon}
                 {(imageSrc && !icon) && (
-                    <div className="size-10 relative rounded-lg overflow-hidden">
+                    <div className="size-10 relative rounded-lg overflow-hidden border border-brd">
                         <Image
                             src={imageSrc}
                             alt={mainText}

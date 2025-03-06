@@ -92,51 +92,92 @@ export const cards: CardNormal[] = [
         icon: <MdOutlineFeed className="size-6 bg-icon text-primary p-2.5 box-content rounded-full" />,
         title: "Feed",
         description: "Dive into my quick thoughts.",
-        href: "#",
+        href: "/feed",
     },
     {
         icon: <MdMiscellaneousServices className="size-6 bg-icon text-primary p-2.5 box-content rounded-full" />,
-        title: "Design Services",
-        description: "Explore my range of design services.",
-        href: "#"
+        title: "Services",
+        description: "Explore my range of dev services.",
+        href: "/services",
     },
 ]
 
 export const techStack: Stack[] = [
     {
-        href: "#",
-        mainText: "Lemon Squezzy",
-        secondaryText: "Payment Platform",
-        imageSrc: "/images/spidieeeee.jpg"
+        href: "https://code.visualstudio.com/",
+        mainText: "VS Code",
+        secondaryText: "Code editor",
+        imageSrc: "/images/vscode-image.png"
     },
     {
-        href: "#",
-        mainText: "Framer",
-        secondaryText: "Web Design Platform",
-        imageSrc: "/images/spidieeeee.jpg"
+        href: "https://react.dev/",
+        mainText: "React",
+        secondaryText: "Frontend Library",
+        imageSrc: "/images/react-logo.png"
     },
     {
-        href: "#",
-        mainText: "Cron",
-        secondaryText: "Calendar",
-        imageSrc: "/images/spidieeeee.jpg"
+        href: "https://nextjs.org/",
+        mainText: "Next.js",
+        secondaryText: "React Framework for SSR",
+        imageSrc: "/images/nextjs-logo.jpeg"
     },
     {
-        href: "#",
+        href: "https://tailwindcss.com/",
+        mainText: "Tailwind CSS",
+        secondaryText: "CSS Framework",
+        imageSrc: "/images/tailwindcss-logo.jpeg"
+    },
+    {
+        href: "https://electronjs.org/",
+        mainText: "Electron",
+        secondaryText: "Cross-Platform Desktop Apps",
+        imageSrc: "/images/electron-logo.jpg"
+    },
+    {
+        href: "https://figma.com/",
         mainText: "Figma",
-        secondaryText: "Design Tool",
-        imageSrc: "/images/spidieeeee.jpg"
+        secondaryText: "Collaborative design tool",
+        imageSrc: "/images/figma-image.png"
+    },
+];
+
+export const designTools: Stack[] = [
+    techStack[5],
+];
+
+export const devTools: Stack[] = [
+    techStack[0],
+    techStack[1],
+    techStack[2],
+    techStack[3],
+    techStack[4],
+    {
+        href: "https://www.jetbrains.com/webstorm/",
+        mainText: "WebStorm",
+        secondaryText: "JavaScript and TypeScript IDE",
+        imageSrc: "/images/webstorm-image.png"
+    },
+    
+];
+
+export const productivityTools: Stack[] = [
+    {
+        href: "https://www.notion.so/",
+        mainText: "Notion",
+        secondaryText: "All-in-one workspace",
+        imageSrc: "/images/notion-logo.png"
     },
     {
-        href: "#",
-        mainText: "Arc",
-        secondaryText: "Browser",
-        imageSrc: "/images/spidieeeee.jpg"
+        href: "https://github.com/",
+        mainText: "GitHub",
+        secondaryText: "Code hosting platform",
+        imageSrc: "/images/github-logo.jpg"
     },
     {
-        href: "#",
-        mainText: "Typefully",
-        secondaryText: "Writer and Scheduler for Twitter/X",
-        imageSrc: "/images/spidieeeee.jpg"
+        href: "https://zoom.com/",
+        mainText: "Zoom",
+        secondaryText: "Video meetings",
+        imageSrc: "/images/zoom-logo.png"
     },
-]
+    techStack[5],
+];

@@ -13,12 +13,17 @@ const KeyPressNavigation = ({ children }: { children: React.ReactNode }) => {
       if (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable) {
         return;
       }
+      
+      if (event.ctrlKey || event.altKey || event.shiftKey || event.metaKey) {
+        return;
+      }
+
       switch (event.key) {
         case "1":
           router.push("/");
           break;
         case "2":
-          router.push("/boutique");
+          router.push("/achievements");
           break;
         case "3":
           router.push("/projects");

@@ -23,8 +23,8 @@ export const navigation: NavItem[] = [
     icon: <MdOutlineExplore className="size-6 p-0 box-content" />
   },
   {
-    title: "Boutique",
-    href: "/boutique",
+    title: "Achievements",
+    href: "/achievements",
     keyNav: "2",
     icon: <FiShoppingCart className="size-6 p-0 box-content" />
   },

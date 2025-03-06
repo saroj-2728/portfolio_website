@@ -13,7 +13,7 @@ const ServicesPage = () => {
             Services
           </h1>
           <p className="mt-3 text-lg max-w-xl">
-            Blending creativity and functionality, our design services transform ideas into captivating realities.
+          Explore the wide range of services I offer, designed to bring your ideas to life with innovation and expertise.
           </p>
         </header>
 

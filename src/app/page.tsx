@@ -1,17 +1,24 @@
 'use client'
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { IoCopyOutline } from "react-icons/io5";
-import LinkCard from "@/components/ui/LinkCard";
-import LinkTiles from "@/components/ui/LinkTiles";
-import FeedCard from "@/components/ui/FeedCard";
-import { newDrops, thoughts, cards, techStack } from "@/constants/home";
 import Link from "next/link";
-import NewsLetterSubscription from "@/components/NewsLetterSub";
+
+import LinkCard from "@/components/ui/LinkCard";
+import LinkCardSkeleton from "@/components/skeletons/LinkCardSkeleton";
+import FeedCard from "@/components/ui/FeedCard";
+import LinkTiles from "@/components/ui/LinkTiles";
+import { IoCopyOutline } from "react-icons/io5";
+// import NewsLetterSubscription from "@/components/NewsLetterSub";
+
+import { cards, techStack } from "@/constants/home";
+// import { thoughts } from "@/constants/home";
+
+import { useProjects } from "@/contexts/ProjectsContext";
 
 export default function Home() {
 
   const router = useRouter();
+  const { projects, isLoading } = useProjects();
 
   const [copied, setCopied] = useState(false)
 
@@ -24,7 +31,7 @@ export default function Home() {
           <h1 className="text-5xl font-bold text-primary">Hey, I&apos;m Saroj. <br /> I design software.
           </h1>
           <p className="mt-3 text-lg max-w-xl">
-            The Original Dashboard-Styled Personal Website Template for Framer just got a revamp – with Dashfolio NEO.
+            Turning ideas into stunning, seamless experiences with a touch of creativity and precision.
           </p>
           <div className="flex items-center space-x-4 text-sm">
             <button
@@ -53,22 +60,28 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
             {
-              newDrops.map((drop, index) => (
-                <LinkCard
-                  key={index}
-                  href={drop.href}
-                  imageSrc={drop.imageSrc}
-                  title={drop.title}
-                  description={drop.description}
-                  tag={drop.tag}
-                />
-              ))
+              isLoading ? (
+                Array.from({ length: 2 }).map((_, index) => (
+                  <LinkCardSkeleton key={index} />
+                ))
+              )
+                :
+                projects.slice(0, 2).map((drop, index) => (
+                  <LinkCard
+                    key={index}
+                    href={`/projecs/${drop.id}`}
+                    imageSrc={drop.image_urls[0]}
+                    title={drop.title}
+                    description={drop.summary}
+                  // tag={drop.tags[0]}
+                  />
+                ))
             }
           </div>
         </div>
 
         {/* Thoughts */}
-        <div className="thoughts p-12 space-y-6">
+        {/* <div className="thoughts p-12 space-y-6">
           <div className="border border-brd rounded-md">
             <div className="p-3 flex flex-col gap-6">
               <div className="title p-4 pb-0">
@@ -90,17 +103,16 @@ export default function Home() {
               </div>
             </div>
 
-            {/* NewsLetter Subscription */}
             <NewsLetterSubscription
               mainText="Want more?"
               secondaryText="Subscribe to my newsletter to get updates on new content."
               className="rounded-b-md"
             />
           </div>
-        </div>
+        </div> */}
 
         {/* Feed and Services*/}
-        <div className="feed px-12 py-0 grid grid-cols-1 gap-8 sm:grid-cols-2">
+        <div className="feed px-12 pt-12 pb-0 grid grid-cols-1 gap-8 sm:grid-cols-2">
           {
             cards.map((card, index) => (
               <FeedCard

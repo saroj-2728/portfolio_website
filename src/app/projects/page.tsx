@@ -1,8 +1,13 @@
+'use client'
 import LinkCard from "@/components/ui/LinkCard";
 import LinkCardSkeleton from "@/components/skeletons/LinkCardSkeleton";
-import { newDrops } from "@/constants/home";
+import { useProjects } from "@/contexts/ProjectsContext";
+
 
 const ProjectsPage = () => {
+
+    const { projects, isLoading } = useProjects();
+
     return (
         <main className="flex flex-col items-center min-h-screen pt-10">
             <div className="max-w-[960px] w-full mx-auto">
@@ -12,7 +17,7 @@ const ProjectsPage = () => {
                         Projects
                     </h1>
                     <p className="mt-3 text-lg max-w-xl">
-                        Designing memorable digital experiences.
+                        A collection of projects built with passion, precision, and innovation.
                     </p>
                 </header>
 
@@ -24,18 +29,23 @@ const ProjectsPage = () => {
                     </div> */}
                     <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
                         {
-                            newDrops.map((drop, index) => (
-                                <LinkCard
-                                    key={index}
-                                    href={drop.href}
-                                    imageSrc={drop.imageSrc}
-                                    title={drop.title}
-                                    description={drop.description}
-                                    tag={drop.tag}
-                                />
-                            ))
+                            isLoading ? (
+                                Array.from({ length: 4 }).map((_, index) => (
+                                    <LinkCardSkeleton key={index} />
+                                ))
+                            )
+                                :
+                                projects.map((drop, index) => (
+                                    <LinkCard
+                                        key={index}
+                                        href={`/projecs/${drop.id}`}
+                                        imageSrc={drop.image_urls[0]}
+                                        title={drop.title}
+                                        description={drop.summary}
+                                    // tag={drop.tags[0]}
+                                    />
+                                ))
                         }
-                        <LinkCardSkeleton />
                     </div>
                 </div>
             </div>

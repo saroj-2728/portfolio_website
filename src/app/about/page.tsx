@@ -77,7 +77,7 @@ const AboutMe = () => {
                     </div>
 
                     {/* Thoughts */}
-                    <div className="thoughts p-12 pb-0 space-y-6">
+                    {/* <div className="thoughts p-12 pb-0 space-y-6">
                         <div className="border border-brd rounded-md">
                             <div className="p-3 flex flex-col gap-6">
                                 <div className="title p-4 pb-0">
@@ -99,14 +99,13 @@ const AboutMe = () => {
                                 </div>
                             </div>
 
-                            {/* NewsLetter Subscription */}
                             <NewsLetterSubscription
                                 mainText="Want more?"
                                 secondaryText="Subscribe to my newsletter to get updates on new content."
                                 className="rounded-b-md"
                             />
                         </div>
-                    </div>
+                    </div> */}
 
                     {/* Stack */}
                     <div className="thoughts p-12 pb-20 space-y-6">

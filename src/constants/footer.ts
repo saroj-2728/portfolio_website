@@ -9,8 +9,8 @@ const indexLinks: FooterLink[] = [
         href: "/"
     },
     {
-        title: "Boutique",
-        href: "/boutique"
+        title: "Achievements",
+        href: "/achievements"
     },
     {
         title: "Projects",

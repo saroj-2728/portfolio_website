@@ -6,69 +6,43 @@ export interface ServiceType {
 
 export const services: ServiceType[] = [
     {
-        title: "Web Design",
-        description: "We design and develop websites that are visually appealing and user-friendly.",
+        title: "Web Development",
+        description: "Building responsive, high-performance websites that cater to your specific needs and deliver an exceptional user experience.",
         details: [
-            "Custom web design",
+            "Custom web development",
             "Responsive design",
+            "Frontend and backend solutions",
+            "Ongoing maintenance and support"
+        ]
+    },
+    {
+        title: "Web Design",
+        description: "Crafting visually stunning and user-friendly websites that captivate audiences and ensure seamless navigation across all devices.",
+        details: [
             "UI/UX design",
-            "E-commerce design",
-            "Website maintenance"
+            "Custom website design",
+            "Responsive and mobile-first design",
+            "Landing pages and blogs",
         ]
     },
     {
-        title: "Branding",
-        description: "We create unique brand identities that resonate with your target audience.",
+        title: "Desktop Apps with Electron",
+        description: "Transforming your web applications into fully functional cross-platform desktop apps using Electron, designed to run seamlessly on Windows, macOS, and Linux.",
         details: [
-            "Logo design",
-            "Brand guidelines",
-            "Brand strategy",
-            "Brand collateral",
-            "Brand messaging"
+            "Cross-platform desktop app development",
+            "Electron.js integration",
+            "Custom desktop UI design",
+            "App packaging and deployment"
         ]
     },
     {
-        title: "Digital Marketing",
-        description: "We help you reach your target audience and grow your business online.",
+        title: "API Development",
+        description: "Creating robust and scalable RESTful APIs that power your applications, ensuring smooth data exchange and integration with third-party services.",
         details: [
-            "SEO",
-            "Social media marketing",
-            "Content marketing",
-            "Email marketing",
-            "PPC advertising"
+            "Backend API development",
+            "Authentication and security",
+            "Database integration",
+            "Optimization and scalability"
         ]
     },
-    {
-        title: "Graphic Design",
-        description: "We design graphics that communicate your brand message effectively.",
-        details: [
-            "Print design",
-            "Packaging design",
-            "Illustration",
-            "Infographics",
-            "Brochure design"
-        ]
-    },
-    {
-        title: "Photography",
-        description: "We capture stunning images that tell your brand story.",
-        details: [
-            "Product photography",
-            "Lifestyle photography",
-            "Event photography",
-            "Portrait photography",
-            "Photo editing"
-        ]
-    },
-    {
-        title: "Videography",
-        description: "We produce high-quality videos that engage your audience.",
-        details: [
-            "Promotional videos",
-            "Explainer videos",
-            "Product videos",
-            "Event coverage",
-            "Video editing"
-        ]
-    }
 ]

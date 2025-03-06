@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { LXGW_WenKai_TC } from "next/font/google";
+import { LXGW_WenKai_TC  } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import KeyPressNavigation from "@/components/KeyPressNav";
 import Footer from "@/components/Footer";
+import { ProjectsProvider } from "@/contexts/ProjectsContext";
 
 const wenkaiFont = LXGW_WenKai_TC({
   weight: '400',
@@ -27,6 +28,7 @@ export default function RootLayout({
         className={`${wenkaiFont.className} antialiased bg-background text-secondary min-h-screen`}
       >
         <KeyPressNavigation>
+          <ProjectsProvider>
           <div className="flex flex-row">
             <div className="sticky top-0 w-[240px] h-screen border-r border-brd bg-accent">
               <Navbar />
@@ -38,6 +40,7 @@ export default function RootLayout({
               <Footer />
             </div>
           </div>
+          </ProjectsProvider>
         </KeyPressNavigation>
       </body>
     </html>
