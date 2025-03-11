@@ -3,8 +3,9 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image"
 import { IoCopyOutline } from "react-icons/io5";
-import { techStack, thoughts } from "@/constants/home";
+import { techStack } from "@/constants/home";
 import LinkTiles from "@/components/ui/LinkTiles";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import NewsLetterSubscription from "@/components/NewsLetterSub";
 import Link from "next/link";
 
@@ -24,7 +25,7 @@ const AboutMe = () => {
                             About Me
                         </h1>
                         <p className="mt-3 text-lg">
-                            From Seattle&apos;s heart, Jackson Carter is a seasoned web designer blending storytelling and digital artistry. With over a decade in the field, he masterfully combines compelling visuals with design.
+                            Passionate web developer and problem-solver, turning ideas into seamless digital experiences..
                         </p>
                     </header>
 
@@ -44,16 +45,13 @@ const AboutMe = () => {
                     {/* Description */}
                     <div className="description p-12 pb-6 space-y-6">
                         <p>
-                            Jackson began his journey in the digital space as a self-taught enthusiast, diving deep into the intricacies of design and the limitless potential of the web. After attaining his degree in Web Development from the University of Washington, he decided to embark on a mission to transform the web, one site at a time.
+                            I&apos;m a web developer with a deep interest in creating efficient and scalable digital solutions. My journey in tech began with a passion for problem-solving, and I&apos;ve developed expertise in both frontend and backend technologies to build functional, user-centered web applications.
                         </p>
                         <p>
-                            His work is a fusion of modern aesthetics and time-honored design principles, resulting in websites that are not just platforms but experiences. With a firm belief that a website is the digital face of a brand, Jackson takes great pride in ensuring every site reflects the unique story and essence of its owner.
+                            I strive to bring clarity to complex challenges and create seamless experiences for users. Whether it&apos;s a simple feature or a full-stack project, I focus on delivering high-quality solutions that meet both user and business needs.
                         </p>
                         <p>
-                            Clients praise Jackson for his unwavering commitment to quality, his attention to detail, and his ability to translate complex ideas into stunning web realities. When he&apos;s not decoding the latest design trends or mastering new programming languages, you can find Jackson hiking the Pacific Northwest trails or capturing the beauty of the Emerald City through his photography.
-                        </p>
-                        <p>
-                            Choosing Jackson Carter means choosing a vision, a passion, and a commitment to digital excellence. Let&apos;s build something beautiful together.
+                            Outside of coding, I enjoy exploring new tech trends and experimenting with different programming languages. Let&apos;s collaborate and bring your ideas to life through technology.
                         </p>
 
                         <div className="flex items-center space-x-4 text-sm">

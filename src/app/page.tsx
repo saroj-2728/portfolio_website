@@ -7,6 +7,7 @@ import LinkCard from "@/components/ui/LinkCard";
 import LinkCardSkeleton from "@/components/skeletons/LinkCardSkeleton";
 import FeedCard from "@/components/ui/FeedCard";
 import LinkTiles from "@/components/ui/LinkTiles";
+// import GradientBorder from "@/components/GradientBorder";
 import { IoCopyOutline } from "react-icons/io5";
 // import NewsLetterSubscription from "@/components/NewsLetterSub";
 
@@ -128,39 +129,39 @@ export default function Home() {
 
         {/* Stack */}
         <div className="thoughts p-12 pb-20 space-y-6">
-          <div className="border border-brd rounded-md">
-            <div className="p-3 flex flex-col gap-6">
-              <div className="title p-4 pb-0">
-                <h2 className="font-bold text-primary">Stack</h2>
-                <p>Software and resources I use on a regular basis.</p>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2">
-                {
-                  techStack.map((item, index) => (
-                    <LinkTiles
-                      key={index}
-                      href={item.href}
-                      mainText={item.mainText}
-                      secondaryText={item.secondaryText}
-                      imageSrc={item.imageSrc}
-                    />
-                  ))
-                }
-              </div>
-              <div className="p-3 pt-0 flex items-center justify-center w-full rounded-md">
-                <Link
-                  href="/stack"
-                  className="text-primary w-full text-center border border-brd rounded-md hover:bg-btn-secondary hover:opacity-60 transition duration-[400ms]"
-                >
-                  <div
-                    className="py-2 w-full"
+            <div className="border border-brd rounded-md">
+              <div className="p-3 flex flex-col gap-6">
+                <div className="title p-4 pb-0">
+                  <h2 className="font-bold text-primary">Stack</h2>
+                  <p>Software and resources I use on a regular basis.</p>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2">
+                  {
+                    techStack.map((item, index) => (
+                      <LinkTiles
+                        key={index}
+                        href={item.href}
+                        mainText={item.mainText}
+                        secondaryText={item.secondaryText}
+                        imageSrc={item.imageSrc}
+                      />
+                    ))
+                  }
+                </div>
+                <div className="p-3 pt-0 flex items-center justify-center w-full rounded-md">
+                  <Link
+                    href="/stack"
+                    className="text-primary w-full text-center border border-brd rounded-md hover:bg-btn-secondary hover:opacity-60 transition duration-[400ms]"
                   >
-                    View all
-                  </div>
-                </Link>
+                    <div
+                      className="py-2 w-full"
+                    >
+                      View all
+                    </div>
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </main>

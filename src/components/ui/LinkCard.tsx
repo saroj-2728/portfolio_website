@@ -27,9 +27,11 @@ const LinkCard = ({ href, imageSrc, title, description, tag }: CardProps) => {
                         <h3 className="text-sm font-bold text-primary">{title}</h3>
                         <p className="text-sm text-secondary">{description}</p>
                     </div>
-                    {/* <div className="text-xs rounded-2xl border border-brd px-3 py-1.5">
-                        <p>{tag}</p>
-                    </div> */}
+                    {tag &&
+                        <div className="text-xs rounded-2xl border border-brd px-3 py-1.5">
+                            <p>{tag}</p>
+                        </div>
+                    }
                 </div>
             </div>
         </Link>

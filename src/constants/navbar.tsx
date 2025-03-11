@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
 import { MdOutlineExplore, MdMiscellaneousServices, MdOutlineFeed, MdOutlineMailOutline } from "react-icons/md";
-import { FiShoppingCart } from "react-icons/fi";
 import { LiaProjectDiagramSolid } from "react-icons/lia";
 import { BiFace } from "react-icons/bi";
 import { TfiThought } from "react-icons/tfi";
 import { PiStack } from "react-icons/pi";
 import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
+import { GrAchievement } from "react-icons/gr";
 
 export type NavItem = {
   title: string;
@@ -26,7 +26,7 @@ export const navigation: NavItem[] = [
     title: "Achievements",
     href: "/achievements",
     keyNav: "2",
-    icon: <FiShoppingCart className="size-6 p-0 box-content" />
+    icon: <GrAchievement className="size-5 p-0 box-content" />
   },
   {
     title: "Projects",

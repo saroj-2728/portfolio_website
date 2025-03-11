@@ -75,6 +75,7 @@ const dummyProjectSummaries: ProjectSummary[] = [
 
 
 // Dummy data for Projects
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const dummyProjects: Project[] = [
     {
         id: "c8f5d42e-2731-4ada-9c48-923fb51f42a9",

@@ -1,7 +1,7 @@
 'use client'
 import { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
-import NewsLetterSubscription from "@/components/NewsLetterSub";
+// import NewsLetterSubscription from "@/components/NewsLetterSub";
 
 const ContactPage = () => {
 
@@ -68,11 +68,11 @@ const ContactPage = () => {
                     </button>
                 </form>
 
-                <NewsLetterSubscription
+                {/* <NewsLetterSubscription
                     mainText="Never miss a new tool"
                     secondaryText="Get notified as soon as I add new tools to my stack."
                     className="m-12 border border-brd rounded-md"
-                />
+                /> */}
 
             </div>
         </main>

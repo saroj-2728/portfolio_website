@@ -28,19 +28,11 @@ const indexLinks: FooterLink[] = [
 
 const productLinks: FooterLink[] = [
     {
-        title: "Billify",
+        title: "LoopChat",
         href: "#"
     },
     {
-        title: "Supply",
-        href: "#"
-    },
-    {
-        title: "Linx",
-        href: "#"
-    },
-    {
-        title: "CourseOS",
+        title: "Veron",
         href: "#"
     },
 ]

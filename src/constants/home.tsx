@@ -107,7 +107,7 @@ export const techStack: Stack[] = [
         href: "https://code.visualstudio.com/",
         mainText: "VS Code",
         secondaryText: "Code editor",
-        imageSrc: "/images/vscode-image.png"
+        imageSrc: "/images/vscode-logo.png"
     },
     {
         href: "https://react.dev/",

@@ -1,62 +1,80 @@
-import LinkCard from "@/components/ui/LinkCard";
-import { newDrops } from "@/constants/home";
+import TimelineCard from "@/components/ui/TimelineCard";
+import { educationData, experienceData } from "@/constants/achievements";
 
 const Achievements = () => {
+
     return (
         <main className="flex flex-col items-center min-h-screen pt-10">
             <div className="max-w-[960px] w-full mx-auto">
                 {/* Header section */}
                 <header className="me p-12 pb-0 space-y-6">
                     <h1 className="text-5xl font-bold text-primary">
-                        Digital Boutique
+                        Milestones and Achievements
                     </h1>
                     <p className="mt-3 text-lg max-w-xl">
-                        Welcome to the forefront of your digital supply! Dive into our intuitive products, where innovation meets convenience.
+                        A showcase of my journey, from educational milestones to professional achievements, awards, and impactful experiences.
                     </p>
                 </header>
 
 
-                {/* New drops */}
-                <div className="newDrops p-12 pb-0 space-y-6">
-                    <div className="title">
-                        <h2 className="font-bold text-primary">New Drops</h2>
+                {/* Education Timeline Section */}
+                <section className="p-12">
+                    <div className="title mb-6">
+                        <h2 className="font-bold text-primary">Education Journey</h2>
                     </div>
-                    <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-                        {
-                            newDrops.map((drop, index) => (
-                                <LinkCard
-                                    key={index}
-                                    href={drop.href}
-                                    imageSrc={drop.imageSrc}
-                                    title={drop.title}
-                                    description={drop.description}
-                                    tag={drop.tag}
-                                />
-                            ))
-                        }
-                    </div>
-                </div>
+                    <div className="relative">
+                        {/* Timeline Line */}
+                        <div className="absolute left-2 top-0 bottom-0 w-0.5 bg-secondary rounded-full" />
 
-                {/* New drops */}
-                <div className="newDrops p-12 pb-20 space-y-6">
-                    <div className="title">
-                        <h2 className="font-bold text-primary">More Products</h2>
+                        {/* Timeline Items */}
+                        <div className="space-y-6">
+                            {educationData.map((item, index) => (
+                                <TimelineCard key={index} timelineItem={item} />
+                            ))}
+
+                        </div>
                     </div>
-                    <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-                        {
-                            newDrops.map((drop, index) => (
-                                <LinkCard
-                                    key={index}
-                                    href={drop.href}
-                                    imageSrc={drop.imageSrc}
-                                    title={drop.title}
-                                    description={drop.description}
-                                    tag={drop.tag}
-                                />
-                            ))
-                        }
+                </section>
+                
+
+                {/* Experiences */}
+                <section className="p-12 pt-0 pb-20">
+                    <div className="title mb-6">
+                        <h2 className="font-bold text-primary">Professional Experiences</h2>
                     </div>
-                </div>
+                    <div className="relative">
+                        {/* Timeline Line */}
+                        <div className="absolute left-2 top-0 bottom-0 w-0.5 bg-secondary rounded-full" />
+
+                        {/* Timeline Items */}
+                        <div className="space-y-4">
+                            {experienceData.map((item, index) => (
+                                <TimelineCard key={index} timelineItem={item} />
+                            ))}
+
+                        </div>
+                    </div>
+                </section>
+
+
+                {/* Awards */}
+                {/* <section className="p-12 pt-0 pb-20">
+                    <div className="title mb-6">
+                        <h2 className="font-bold text-primary">Achievements & Awards</h2>
+                    </div>
+                    <div className="relative">
+                        <div className="absolute left-2 top-0 bottom-0 w-0.5 bg-secondary rounded-full" />
+
+                        <div className="space-y-4">
+                            {experienceData.map((item, index) => (
+                                <TimelineCard key={index} timelineItem={item} />
+                            ))}
+
+                        </div>
+                    </div>
+                </section> */}
+
+
             </div>
         </main>
     )
