@@ -36,7 +36,7 @@ const Navbar = () => {
 
 
     return (
-        <nav className="px-4 h-full flex flex-col overflow-hidden" role="navigation">
+        <nav className="hidden px-4 h-full md:flex flex-col overflow-hidden" role="navigation">
             {/* Profile Section */}
             <div className="profile bg-accent sticky top-0 flex flex-row items-center justify-start gap-3 py-7">
                 <div className="profileImage w-10 h-10 rounded-full">

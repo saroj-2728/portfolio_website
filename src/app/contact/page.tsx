@@ -8,15 +8,15 @@ const ContactPage = () => {
     const [copied, setCopied] = useState(false)
 
     return (
-        <main className="flex flex-col items-center min-h-screen pt-10">
+        <main className="flex flex-col items-center md:min-h-screen md:pt-10 pt-0 pb-10 md:pb-0">
             <div className="max-w-[960px] w-full mx-auto">
                 {/* Header section */}
-                <header className="me p-12 pb-0 space-y-6">
-                    <h1 className="text-5xl font-bold text-primary">
+                <header className="me p-0 pt-10 md:p-12 md:pb-0 space-y-6">
+                    <h1 className="text-4xl md:text-5xl font-bold text-primary">
                         Contact
                     </h1>
                     <p className="mt-3 text-lg max-w-xl">
-                        I&apos;m always looking to collaborate on interesting projects with great people. Need a supportive hand? I have two!
+                        Let&apos;s connect! Whether you have a project idea, a question, or just want to chat, I&apos;d love to hear from you.
                     </p>
                     <div className="flex items-center space-x-4 text-sm">
                         <button
@@ -32,9 +32,9 @@ const ContactPage = () => {
                     </div>
                 </header>
 
-                <form className="m-12 p-8 border border-brd rounded-lg space-y-6">
+                <form className="md:m-12 mt-10 m-0 p-4 md:p-8 border border-brd rounded-lg space-y-4 md:space-y-6">
                     <h3 className="text-xl font-bold text-primary">Send a message</h3>
-                    <div className="flex gap-4">
+                    <div className="flex flex-col md:flex-row gap-4">
                         <div className="flex-1 space-y-2">
                             <label htmlFor="name" className="block text-sm font-medium">Name</label>
                             <input
@@ -63,7 +63,7 @@ const ContactPage = () => {
                             required
                         />
                     </div>
-                    <button type="submit" className="w-full py-2 px-4 bg-btn-primary text-background rounded-lg hover:opacity-60 transition duration-[400ms] cursor-pointer">
+                    <button type="submit" className="w-full py-2.5 md:py-2 px-4 bg-btn-primary text-background rounded-lg hover:opacity-60 transition duration-[400ms] cursor-pointer">
                         Send Message
                     </button>
                 </form>

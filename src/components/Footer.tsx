@@ -16,9 +16,9 @@ const Footer = () => {
     }, [])
 
     return (
-        <div className="flex flex-col items-center bg-accent w-full border-t border-brd">
+        <div className="flex flex-col items-center bg-accent w-full border-t border-brd pb-5">
             <footer className="w-full max-w-[960px] mx-auto">
-                <div className="p-12 flex flex-col gap-10">
+                <div className="p-6 md:p-12 flex flex-col-reverse md:flex-col gap-5 md:gap-10">
                     <div className="links grid grid-cols-2 gap-20 sm:grid-cols-4">
 
                         {
@@ -32,9 +32,9 @@ const Footer = () => {
                         }
                     </div>
 
-                    <div className="current grid grid-cols-2 gap-6 border-y border-brd items-center">
+                    <div className="current grid grid-cols-1 md:grid-cols-2 gap-6 py-5 md:py-3 md:p-0 border-b md:border-y border-brd items-center">
                         <div className="status flex flex-col gap-1">
-                            <h4 className="text-primary">Currently 👨‍💻 working •</h4>
+                            <h4 className="text-primary">Currently 👨‍💻 working <span className="text-green-400">•</span></h4>
                             <Link
                                 href={"/contact"}
                                 className="flex flex-row items-center gap-2 min-w-max max-w-min"
@@ -44,7 +44,7 @@ const Footer = () => {
                             </Link>
                         </div>
                         <div className="time flex flex-row justify-start">
-                            <p className="text-[80px]">{time}</p>
+                            <p className="text-5xl md:text-[80px]">{time}</p>
                         </div>
                     </div>
                 </div>

@@ -57,7 +57,7 @@ export default function Home() {
         {/* New drops */}
         <div className="newDrops p-12 pb-0 space-y-6">
           <div className="title">
-            <h2 className="font-bold text-primary">New Drops</h2>
+            <h2 className="font-bold text-primary">New Projects</h2>
           </div>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
             {

@@ -12,20 +12,25 @@ interface ProjectsContextType {
 const ProjectsContext = createContext<ProjectsContextType | undefined>(undefined);
 
 export const ProjectsProvider = (
-    { children } : {children: React.ReactNode}
+    { children }: { children: React.ReactNode }
 ) => {
     const [projects, setProjects] = useState<ProjectSummary[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(true)
 
     useEffect(() => {
-        async function fetchProjects() {
-            const res = await fetch('/api/projects');
-            const data: ProjectSummary[] = await res.json();
-            setProjects(data);
-            setIsLoading(false);
-        }
+        try {
+            async function fetchProjects() {
+                const res = await fetch('/api/projects', { cache: "force-cache", next: { revalidate: 3600 } });
+                const data: ProjectSummary[] = await res.json();
+                setProjects(data);
+                setIsLoading(false);
+            }
 
-        fetchProjects();
+            fetchProjects();
+        }
+        catch (error) {
+            console.error("Error fetching projects:", error);
+        }
     }, []);
 
     return (
