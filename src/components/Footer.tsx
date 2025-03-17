@@ -6,7 +6,7 @@ import { FaArrowRight } from "react-icons/fa6";
 
 const Footer = () => {
 
-    const [time, setTime] = useState(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }))
+    const [time, setTime] = useState<string>("--:--")
 
     useEffect(() => {
         const interval = setInterval(() => {
