@@ -13,13 +13,13 @@ const LinkCard = ({ href, imageSrc, title, description, tag }: CardProps) => {
     return (
         <Link href={href} className="w-full rounded-md bg-accent border border-brd group overflow-hidden">
             <div>
-                <div className="overflow-hidden max-h-58">
+                <div className="overflow-hidden h-58">
                     <Image
                         src={imageSrc}
                         width={500}
                         height={500}
-                        className="w-full h-auto object-cover object-center rounded-t-md transition-transform duration-300 ease-in-out group-hover:scale-105"
-                        alt="Image 1"
+                        className="w-full h-full object-cover object-center rounded-t-md transition-transform duration-300 ease-in-out group-hover:scale-110"
+                        alt="Image of the project"
                     />
                 </div>
                 <div className="p-4 flex flex-nowrap justify-between items-end">

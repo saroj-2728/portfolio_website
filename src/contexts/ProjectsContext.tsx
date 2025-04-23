@@ -20,7 +20,7 @@ export const ProjectsProvider = (
     useEffect(() => {
         try {
             async function fetchProjects() {
-                const res = await fetch('/api/projects', { cache: "force-cache", next: { revalidate: 3600 } });
+                const res = await fetch('/api/projects', { cache: "no-store"});
                 const data: ProjectSummary[] = await res.json();
                 setProjects(data);
                 setIsLoading(false);
