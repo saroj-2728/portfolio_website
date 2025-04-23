@@ -20,8 +20,8 @@ const AboutMe = () => {
             <div className="max-w-[960px] w-full mx-auto">
                 <div className="max-w-[760px] w-full mx-auto">
                     {/* Header section */}
-                    <header className="me p-12 pb-0 space-y-6">
-                        <h1 className="text-5xl font-bold text-primary">
+                    <header className="me md:p-12 md:pb-0 pb-12 space-y-6">
+                        <h1 className="text-4xl md:text-5xl font-bold text-primary">
                             About Me
                         </h1>
                         <p className="mt-3 text-lg">
@@ -30,7 +30,7 @@ const AboutMe = () => {
                     </header>
 
                     {/* Image Section */}
-                    <div className="flex justify-start items-center p-12 pb-0">
+                    <div className="flex justify-start items-center md:p-12 md:pb-0 pb-12">
                         <div className="image h-full w-full">
                             <Image
                                 src="/images/download.jpg"
@@ -43,7 +43,7 @@ const AboutMe = () => {
                     </div>
 
                     {/* Description */}
-                    <div className="description p-12 pb-6 space-y-6">
+                    <div className="description md:p-12 md:pb-6 pb-12 space-y-6">
                         <p>
                             I&apos;m a web developer with a deep interest in creating efficient and scalable digital solutions. My journey in tech began with a passion for problem-solving, and I&apos;ve developed expertise in both frontend and backend technologies to build functional, user-centered web applications.
                         </p>
@@ -106,7 +106,7 @@ const AboutMe = () => {
                     </div> */}
 
                     {/* Stack */}
-                    <div className="thoughts p-12 pb-20 space-y-6">
+                    <div className="thoughts md:p-12 pb-20 space-y-6">
                         <div className="border border-brd rounded-md">
                             <div className="p-3 flex flex-col gap-6">
                                 <div className="title p-4 pb-0">

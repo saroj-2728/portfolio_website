@@ -16,7 +16,7 @@ const ServiceCard = ({ title, description, details }: ServiceType) => {
                 <div>
                     <p className="text-primary text-xl font-semibold">{title}</p>
                 </div>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-2 md:text-base text-[0.9rem]">
                     <div>
                         <p className="text-primary">
                             {description}

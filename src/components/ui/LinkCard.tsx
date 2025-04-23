@@ -13,7 +13,7 @@ const LinkCard = ({ href, imageSrc, title, description, tag }: CardProps) => {
     return (
         <Link href={href} className="w-full rounded-md bg-accent border border-brd group overflow-hidden">
             <div>
-                <div className="overflow-hidden h-58">
+                <div className="overflow-hidden md:h-58 h-48">
                     <Image
                         src={imageSrc}
                         width={500}

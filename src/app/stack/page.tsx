@@ -14,8 +14,8 @@ const TechStack = () => {
             <div className="max-w-[960px] w-full mx-auto">
 
                 {/* Header section */}
-                <header className="me p-12 pb-0 space-y-6">
-                    <h1 className="text-5xl font-bold text-primary">Stack
+                <header className="me md:p-12 md:pb-0 pb-12 space-y-6">
+                    <h1 className="text-4xl md:text-5xl font-bold text-primary">Stack
                     </h1>
                     <p className="mt-3 text-lg max-w-xl">
                         Tools, resources, and software I use daily.
@@ -23,7 +23,7 @@ const TechStack = () => {
                 </header>
 
                 {/* Stack */}
-                <div className="thoughts p-12 pb-0 space-y-6">
+                <div className="design md:p-12 md:pb-0 pb-12 space-y-6">
                     <div className="border border-brd rounded-md">
                         <div className="p-3 flex flex-col gap-6">
                             <div className="title p-4 pb-0">
@@ -46,7 +46,7 @@ const TechStack = () => {
                     </div>
                 </div>
 
-                <div className="thoughts p-12 pb-0 space-y-6">
+                <div className="devevlopment md:p-12 md:pb-0 pb-12 space-y-6">
                     <div className="border border-brd rounded-md">
                         <div className="p-3 flex flex-col gap-6">
                             <div className="title p-4 pb-0">
@@ -69,7 +69,7 @@ const TechStack = () => {
                     </div>
                 </div>
 
-                <div className="thoughts p-12 pb-20 space-y-6">
+                <div className="productivity md:p-12 pb-20 space-y-6">
                     <div className="border border-brd rounded-md">
                         <div className="p-3 flex flex-col gap-6">
                             <div className="title p-4 pb-0">

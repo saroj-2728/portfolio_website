@@ -28,8 +28,8 @@ export default function Home() {
       <div className="max-w-[960px] w-full mx-auto">
 
         {/* Header section */}
-        <header className="me p-12 pb-0 space-y-6">
-          <h1 className="text-5xl font-bold text-primary">Hey, I&apos;m Saroj. <br /> I design software.
+        <header className="me md:p-12 md:pb-0 pb-12 space-y-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-primary">Hey, I&apos;m Saroj. <br /> I design software.
           </h1>
           <p className="mt-3 text-lg max-w-xl">
             Turning ideas into stunning, seamless experiences with a touch of creativity and precision.
@@ -55,7 +55,7 @@ export default function Home() {
         </header>
 
         {/* New drops */}
-        <div className="newDrops p-12 pb-0 space-y-6">
+        <div className="newDrops md:p-12 md:pb-0 pb-12 space-y-6">
           <div className="title">
             <h2 className="font-bold text-primary">New Projects</h2>
           </div>
@@ -113,7 +113,7 @@ export default function Home() {
         </div> */}
 
         {/* Feed and Services*/}
-        <div className="feed px-12 pt-12 pb-0 grid grid-cols-1 gap-8 sm:grid-cols-2">
+        <div className="feed md:px-12 md:pt-12 md:pb-0 pb-12 grid grid-cols-1 gap-8 sm:grid-cols-2">
           {
             cards.map((card, index) => (
               <FeedCard
@@ -128,7 +128,7 @@ export default function Home() {
         </div>
 
         {/* Stack */}
-        <div className="thoughts p-12 pb-20 space-y-6">
+        <div className="thoughts md:p-12 pb-20 space-y-6">
             <div className="border border-brd rounded-md">
               <div className="p-3 flex flex-col gap-6">
                 <div className="title p-4 pb-0">

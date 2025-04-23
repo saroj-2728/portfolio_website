@@ -12,8 +12,8 @@ const ProjectsPage = () => {
         <main className="flex flex-col items-center min-h-screen pt-10">
             <div className="max-w-[960px] w-full mx-auto">
                 {/* Header section */}
-                <header className="me p-12 pb-0 space-y-6">
-                    <h1 className="text-5xl font-bold text-primary">
+                <header className="me md:p-12 md:pb-0 pb-12 space-y-6">
+                    <h1 className="md:text-5xl text-4xl font-bold text-primary">
                         Projects
                     </h1>
                     <p className="mt-3 text-lg max-w-xl">
@@ -23,7 +23,7 @@ const ProjectsPage = () => {
 
 
                 {/* New drops */}
-                <div className="newDrops p-12 pb-20 space-y-6">
+                <div className="newDrops md:p-12 pb-20 space-y-6">
                     {/* <div className="title">
                         <h2 className="font-bold text-primary">New Drops</h2>
                     </div> */}
