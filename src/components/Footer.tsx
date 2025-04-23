@@ -9,6 +9,8 @@ const Footer = () => {
     const [time, setTime] = useState<string>("--:--")
 
     useEffect(() => {
+        setTime(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }))
+        
         const interval = setInterval(() => {
             setTime(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }))
         }, 60 * 1000)
