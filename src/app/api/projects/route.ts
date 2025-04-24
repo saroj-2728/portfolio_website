@@ -7,7 +7,7 @@ export async function GET(request: Request) {
     try {
         // Query the database for projects
         const projects: Project[] = await query<Project>('SELECT * FROM projects'); // Adjust the SQL query as needed
-
+        
         // Return the projects as JSON
         return new Response(JSON.stringify(projects), {
             status: 200,

@@ -18,8 +18,9 @@ export interface ServiceType {
 export interface Project {
     id: string;
     title: string;
+    summary: string;
     description: string;
-    image_url: string;
+    image_urls: string[];
     github_url: string;
     tags: string[];
     category: string | null;
@@ -29,6 +30,7 @@ export interface Project {
     created_at: Date;
     updated_at: Date;
     live_url: string | null;
+    features: string[];
 }
 
 
@@ -44,7 +46,6 @@ export interface ProjectSummary {
 export const query = async <T>(text: string, params?: any[]): Promise<T[]> => {
     try {
         const res = await pool.query(text, params);
-        // return dummyProjectSummaries as unknown as T[];
         return res.rows;
     }
     catch (error) {

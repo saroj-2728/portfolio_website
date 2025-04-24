@@ -38,7 +38,7 @@ const ProjectsPage = () => {
                                 projects.map((drop, index) => (
                                     <LinkCard
                                         key={index}
-                                        href={`/projecs/${drop.id}`}
+                                        href={`/projects/${drop.id}`}
                                         imageSrc={drop.image_urls[0]}
                                         title={drop.title}
                                         description={drop.summary}

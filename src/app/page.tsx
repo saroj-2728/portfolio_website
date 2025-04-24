@@ -70,7 +70,7 @@ export default function Home() {
                 projects.slice(0, 2).map((drop, index) => (
                   <LinkCard
                     key={index}
-                    href={`/projecs/${drop.id}`}
+                    href={`/projects/${drop.id}`}
                     imageSrc={drop.image_urls[0]}
                     title={drop.title}
                     description={drop.summary}

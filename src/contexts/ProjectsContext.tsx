@@ -1,11 +1,11 @@
 'use client'
-import type { ProjectSummary } from '../../lib/db'
+import type { Project } from '../../lib/db'
 import { createContext, useContext, useState, useEffect } from 'react';
 
 
 interface ProjectsContextType {
-    projects: ProjectSummary[];
-    setProjects: React.Dispatch<React.SetStateAction<ProjectSummary[]>>;
+    projects: Project[];
+    setProjects: React.Dispatch<React.SetStateAction<Project[]>>;
     isLoading: boolean;
 }
 
@@ -14,14 +14,19 @@ const ProjectsContext = createContext<ProjectsContextType | undefined>(undefined
 export const ProjectsProvider = (
     { children }: { children: React.ReactNode }
 ) => {
-    const [projects, setProjects] = useState<ProjectSummary[]>([]);
+    const [projects, setProjects] = useState<Project[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(true)
 
     useEffect(() => {
         try {
             async function fetchProjects() {
-                const res = await fetch('/api/projects', { cache: "no-store"});
-                const data: ProjectSummary[] = await res.json();
+                // const res = await fetch('/api/projects', { cache: "no-store" });
+
+                const res = await fetch('/api/projects', {
+                    next: { revalidate: 3600 }, // cache and revalidate every 1 hour
+                });
+
+                const data: Project[] = await res.json();
                 setProjects(data);
                 setIsLoading(false);
             }
