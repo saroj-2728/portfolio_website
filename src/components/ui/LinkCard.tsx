@@ -22,7 +22,7 @@ const LinkCard = ({ href, imageSrc, title, description, tag }: CardProps) => {
                         alt="Image of the project"
                     />
                 </div>
-                <div className="p-4 flex flex-nowrap justify-between items-end">
+                <div className="p-4 flex flex-nowrap justify-between items-end border-t border-brd">
                     <div>
                         <h3 className="text-sm font-bold text-primary">{title}</h3>
                         <p className="text-sm text-secondary">{description}</p>

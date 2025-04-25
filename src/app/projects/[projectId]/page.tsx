@@ -10,6 +10,7 @@ import { FaGithub } from 'react-icons/fa'
 import { IoClose } from 'react-icons/io5';
 
 import { useProjects } from '@/contexts/ProjectsContext'
+import LinkCard from '@/components/ui/LinkCard'
 
 
 const ProjectPage = ({
@@ -67,7 +68,7 @@ const ProjectPage = ({
 
                 <div className="w-full mx-auto">
                     {/* Images Section */}
-                    <div className="p-12 pb-0 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    <div className="md:p-12 md:pb-0 pb-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
                         {
                             project?.image_urls.map((url, index) => (
                                 <div
@@ -95,8 +96,8 @@ const ProjectPage = ({
 
 
                     {/* Description */}
-                    <div className='p-12 pb-0'>
-                        <h3 className='text-3xl text-primary font-semibold'>
+                    <div className='md:p-12 md:pb-0 pb-12'>
+                        <h3 className='text-2xl md:text-3xl text-primary font-semibold'>
                             Overview
                         </h3>
 
@@ -113,9 +114,10 @@ const ProjectPage = ({
                             }
                         </ul>
 
-                        <div className="btns mt-8 flex gap-4">
+                        <div className="btns text-sm mt-8 flex gap-4">
                             <Link
                                 href={project?.github_url || ""}
+                                target='_blank'
                                 className="flex items-center justify-center gap-2 px-3 py-2 font-medium text-black bg-primary rounded-md hover:opacity-60 transition duration-[400ms]"
                             >
                                 <FaGithub className='size-6' />
@@ -126,6 +128,7 @@ const ProjectPage = ({
                                 project?.live_url !== "" &&
                                 <Link
                                     href={project?.live_url || ""}
+                                    target='_blank'
                                     className="flex items-center justify-center gap-2 border border-brd px-3 py-2 font-medium rounded-md hover:bg-btn-secondary hover:opacity-60 transition duration-[400ms]"
                                 >
                                     🌐 View Live
@@ -135,10 +138,10 @@ const ProjectPage = ({
                     </div>
 
                     {/* Suggestions */}
-                    <div className='suggestions p-12 pb-20'>
+                    <div className='suggestions md:p-12 pb-20'>
                         {(firstIndex !== -1 || secondIndex !== -1) && (
                             <>
-                                <h5 className='text-primary text-xl font-semibold'>
+                                <h5 className='text-primary text-base font-semibold'>
                                     Other Projects
                                 </h5>
 
@@ -149,29 +152,13 @@ const ProjectPage = ({
                                         const project = projects[index];
 
                                         return (
-                                            <Link
-                                                key={project.id}
+                                            <LinkCard
+                                                key={index}
                                                 href={`/projects/${project.id}`}
-                                                className="w-full rounded-md bg-accent border border-brd group overflow-hidden"
-                                            >
-                                                <div>
-                                                    <div className="overflow-hidden md:h-58 h-48">
-                                                        <Image
-                                                            src={project.image_urls[0]}
-                                                            width={500}
-                                                            height={500}
-                                                            className="w-full h-full object-cover object-center rounded-t-md transition-transform duration-300 ease-in-out group-hover:scale-110"
-                                                            alt={`Image of ${project.title}`}
-                                                        />
-                                                    </div>
-                                                    <div className="p-4 flex flex-nowrap justify-between items-end">
-                                                        <div>
-                                                            <h3 className="text-sm font-bold text-primary">{project.title}</h3>
-                                                            <p className="text-sm text-secondary">{project.summary}</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </Link>
+                                                imageSrc={project.image_urls[0]}
+                                                title={project.title}
+                                                description={project.summary}
+                                            />
                                         );
                                     })}
                                 </div>
@@ -216,7 +203,7 @@ const ImageViewer = ({
         >
             <button
                 onClick={handleClose}
-                className="absolute top-4 right-4 text-white text-3xl hover:opacity-70 cursor-pointer"
+                className="absolute top-4 right-4 text-white text-3xl hover:opacity-60 cursor-pointer"
                 aria-label="Close"
             >
                 <IoClose />
@@ -224,16 +211,18 @@ const ImageViewer = ({
 
             <div
                 onClick={(e) => e.stopPropagation()}
-                className={`relative w-full max-w-4xl h-[80vh] rounded-md overflow-hidden transform transition-transform duration-300 ${
-                    visible ? 'scale-100' : 'scale-95'
-                }`}
+                className={`relative px-4 max-w-4xl max-h-[80vh] transform transition-transform duration-300 ${visible ? 'scale-100' : 'scale-95'}`}
             >
-                <Image
-                    src={imageUrl}
-                    alt="Enlarged project image"
-                    layout="fill"
-                    className="object-contain border border-brd"
-                />
+                <div className="inline-block border border-brd rounded-md overflow-hidden">
+                    <Image
+                        src={imageUrl}
+                        alt="Enlarged project image"
+                        className="object-contain max-h-[75vh] max-w-full"
+                        width={800}
+                        height={600}
+                        sizes="(max-width: 768px) 90vw, 800px"
+                    />
+                </div>
             </div>
         </div>
     )
