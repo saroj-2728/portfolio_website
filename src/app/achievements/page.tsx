@@ -18,7 +18,7 @@ const Achievements = () => {
 
 
                 {/* Education Timeline Section */}
-                <section className="md:p-12 pb-12">
+                <section className="md:p-12 md:pb-0 pb-12">
                     <div className="title mb-6">
                         <h2 className="font-bold text-primary">Education Journey</h2>
                     </div>
@@ -38,7 +38,7 @@ const Achievements = () => {
                 
 
                 {/* Experiences */}
-                <section className="md:p-12 pt-0 pb-20">
+                <section className="md:p-12 pb-20">
                     <div className="title mb-6">
                         <h2 className="font-bold text-primary">Professional Experiences</h2>
                     </div>

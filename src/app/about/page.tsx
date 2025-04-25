@@ -25,7 +25,7 @@ const AboutMe = () => {
                             About Me
                         </h1>
                         <p className="mt-3 text-lg">
-                            Passionate web developer and problem-solver, turning ideas into seamless digital experiences..
+                            Passionate web developer and problem-solver, turning ideas into seamless digital experiences.
                         </p>
                     </header>
 
@@ -33,10 +33,11 @@ const AboutMe = () => {
                     <div className="flex justify-start items-center md:p-12 md:pb-0 pb-12">
                         <div className="image h-full w-full">
                             <Image
-                                src="/images/download.jpg"
+                                src="https://res.cloudinary.com/djfns59te/image/upload/v1745613321/IMG_6813_1_1_i1kmwm.jpg"
                                 alt="About Me"
                                 width={500}
                                 height={500}
+                                priority={true}
                                 className="object-cover rounded-lg h-full w-full"
                             />
                         </div>
