@@ -12,6 +12,9 @@ import { IoClose } from 'react-icons/io5';
 import { useProjects } from '@/contexts/ProjectsContext'
 import LinkCard from '@/components/ui/LinkCard'
 
+import ImageSkeleton from '@/components/skeletons/ImageSkeleton'
+import LinkCardSkeleton from '@/components/skeletons/LinkCardSkeleton'
+
 
 const ProjectPage = ({
     params
@@ -20,7 +23,7 @@ const ProjectPage = ({
 }) => {
 
     const { projectId } = use(params)
-    const { projects } = useProjects()
+    const { projects, isLoading } = useProjects()
 
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
@@ -56,20 +59,32 @@ const ProjectPage = ({
         <main className="flex flex-col items-center min-h-screen pt-10">
             <div className="max-w-[960px] w-full mx-auto">
                 {/* Header section */}
-                <header className="me md:p-12 md:pb-0 pb-12">
-                    <h1 className="md:text-5xl text-4xl font-bold text-primary">
-                        {project?.title}
-                    </h1>
-                    <p className="mt-2 text-lg max-w-xl">
-                        {project?.summary}
-                    </p>
-                </header>
+                {isLoading ?
+                    <div className="md:p-12 md:pb-0 pb-12 animate-pulse">
+                        <h1 className="md:text-5xl text-4xl h-10 md:h-12 md:w-xs w-1/2 font-bold bg-gray-700/50 rounded-md" />
+                        <p className="mt-2 text-lg h-7 md:w-lg w-2/3 bg-gray-700/50 rounded-md" />
+                    </div>
+                    :
+                    <header className="md:p-12 md:pb-0 pb-12">
+                        <h1 className="md:text-5xl text-4xl font-bold text-primary">
+                            {project?.title}
+                        </h1>
+                        <p className="mt-2 text-lg max-w-xl">
+                            {project?.summary}
+                        </p>
+                    </header>
+                }
 
 
-                <div className="w-full mx-auto">
-                    {/* Images Section */}
-                    <div className="md:p-12 md:pb-0 pb-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                        {
+                {/* Images Section */}
+                <div className="md:p-12 md:pb-0 pb-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    {
+                        isLoading ? (
+                            Array.from({ length: 3 }).map((_, index) => (
+                                <ImageSkeleton key={index} />
+                            ))
+                        )
+                            :
                             project?.image_urls.map((url, index) => (
                                 <div
                                     key={index}
@@ -84,69 +99,97 @@ const ProjectPage = ({
                                     />
                                 </div>
                             ))
+                    }
+                </div>
+
+                {selectedImage && (
+                    <ImageViewer
+                        imageUrl={selectedImage}
+                        onClose={() => setSelectedImage(null)}
+                    />
+                )}
+
+
+                {/* Description */}
+                <div className='md:p-12 md:pb-0 pb-12'>
+                    <h3 className='text-2xl md:text-3xl text-primary font-semibold'>
+                        Overview
+                    </h3>
+
+                    <div className={`mt-4 text-sm text-secondary ${isLoading ? "space-y-2" : ""}`}>
+                        {
+                            isLoading ?
+                                (
+                                    Array.from({ length: 3 }).map((_, index) => (
+                                        <p
+                                            key={index}
+                                            className='w-full rounded text-sm h-4 bg-gray-700/50 animate-pulse'
+                                        />
+                                    ))
+                                )
+                                :
+                                <p>{project?.description}</p>
                         }
                     </div>
-
-                    {selectedImage && (
-                        <ImageViewer
-                            imageUrl={selectedImage}
-                            onClose={() => setSelectedImage(null)}
-                        />
-                    )}
-
-
-                    {/* Description */}
-                    <div className='md:p-12 md:pb-0 pb-12'>
-                        <h3 className='text-2xl md:text-3xl text-primary font-semibold'>
-                            Overview
-                        </h3>
-
-                        <p className='mt-4 text-sm text-secondary'>
-                            {project?.description}
-                        </p>
-                        <ul className='mt-4 text-sm text-secondary list-disc list-inside'>
-                            {
+                    <ul className={`mt-4 text-sm text-secondary list-disc list-inside ${isLoading ? "space-y-3" : ""}`}>
+                        {
+                            isLoading ?
+                                (
+                                    Array.from({ length: 5 }).map((_, index) => (
+                                        <p
+                                            key={index}
+                                            className='w-3/4 md:w-1/2 rounded text-sm h-4 bg-gray-700/50 animate-pulse'
+                                        />
+                                    ))
+                                )
+                                :
                                 project?.features.map((feature, index) => (
                                     <li key={index} className='mt-2 text-sm text-secondary'>
                                         {feature}
                                     </li>
                                 ))
-                            }
-                        </ul>
+                        }
+                    </ul>
 
-                        <div className="btns text-sm mt-8 flex gap-4">
+                    <div className="btns text-sm mt-8 flex gap-4">
+                        <Link
+                            href={project?.github_url || ""}
+                            target='_blank'
+                            className="flex items-center justify-center gap-2 px-3 py-2 font-medium text-black bg-primary rounded-md hover:opacity-60 transition duration-[400ms]"
+                        >
+                            <FaGithub className='size-6' />
+                            <span>View on GitHub</span>
+                        </Link>
+
+                        {project?.live_url &&
+                            project?.live_url !== "" &&
                             <Link
-                                href={project?.github_url || ""}
-                                target='_blank'
-                                className="flex items-center justify-center gap-2 px-3 py-2 font-medium text-black bg-primary rounded-md hover:opacity-60 transition duration-[400ms]"
+                                href={project?.live_url || "#"}
+                                target={`${isLoading ? "" : "_blank"}`}
+                                className="flex items-center justify-center gap-2 border border-brd px-3 py-2 font-medium rounded-md hover:bg-btn-secondary hover:opacity-60 transition duration-[400ms]"
                             >
-                                <FaGithub className='size-6' />
-                                <span>View on GitHub</span>
+                                🌐 View Live
                             </Link>
-
-                            {project?.live_url &&
-                                project?.live_url !== "" &&
-                                <Link
-                                    href={project?.live_url || ""}
-                                    target='_blank'
-                                    className="flex items-center justify-center gap-2 border border-brd px-3 py-2 font-medium rounded-md hover:bg-btn-secondary hover:opacity-60 transition duration-[400ms]"
-                                >
-                                    🌐 View Live
-                                </Link>
-                            }
-                        </div>
+                        }
                     </div>
+                </div>
 
-                    {/* Suggestions */}
-                    <div className='suggestions md:p-12 pb-20'>
-                        {(firstIndex !== -1 || secondIndex !== -1) && (
-                            <>
-                                <h5 className='text-primary text-base font-semibold'>
-                                    Other Projects
-                                </h5>
-
-                                <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2">
-                                    {[firstIndex, secondIndex].map((index) => {
+                {/* Suggestions */}
+                <div className='suggestions md:p-12 pb-20'>
+                    <h5 className='text-primary text-base font-semibold'>
+                        Other Projects
+                    </h5>
+                    <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2">
+                        {
+                            isLoading ?
+                                (
+                                    Array.from({ length: 2 }).map((_, index) => (
+                                        <LinkCardSkeleton key={index} />
+                                    ))
+                                )
+                                :
+                                (firstIndex !== -1 || secondIndex !== -1) && (
+                                    [firstIndex, secondIndex].map((index) => {
                                         if (index === -1) return null;
 
                                         const project = projects[index];
@@ -160,10 +203,9 @@ const ProjectPage = ({
                                                 description={project.summary}
                                             />
                                         );
-                                    })}
-                                </div>
-                            </>
-                        )}
+                                    })
+                                )
+                        }
                     </div>
                 </div>
             </div>
@@ -197,9 +239,8 @@ const ImageViewer = ({
     return (
         <div
             onClick={handleClose}
-            className={`fixed inset-0 z-50 flex items-center justify-center bg-black/95 transition-opacity duration-300 ${
-                visible ? 'opacity-100' : 'opacity-0'
-            }`}
+            className={`fixed inset-0 z-50 flex items-center justify-center bg-black/95 transition-opacity duration-300 ${visible ? 'opacity-100' : 'opacity-0'
+                }`}
         >
             <button
                 onClick={handleClose}

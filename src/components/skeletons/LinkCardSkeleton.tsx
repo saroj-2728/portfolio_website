@@ -7,7 +7,7 @@ const LinkCardSkeleton = () => {
                     <div className="w-32 h-4 bg-gray-700/50 rounded" />
                     <div className="w-48 h-4 bg-gray-700/50 rounded" />
                 </div>
-                <div className="w-12 h-6 bg-gray-700/50 rounded-2xl" />
+                {/* <div className="w-12 h-6 bg-gray-700/50 rounded-2xl" /> */}
             </div>
         </div>
     );
