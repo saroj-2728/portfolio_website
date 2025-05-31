@@ -1,5 +1,5 @@
 'use client'
-import type { Project } from '../../lib/db'
+import type { Project } from '@/types/projectType';
 import { createContext, useContext, useState, useEffect } from 'react';
 
 

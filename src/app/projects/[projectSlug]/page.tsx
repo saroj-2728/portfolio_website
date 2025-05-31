@@ -15,20 +15,22 @@ import LinkCard from '@/components/ui/LinkCard'
 import ImageSkeleton from '@/components/skeletons/ImageSkeleton'
 import LinkCardSkeleton from '@/components/skeletons/LinkCardSkeleton'
 
+import { urlFor } from '@/sanity/sanityImage'
+
 
 const ProjectPage = ({
     params
 }: {
-    params: Promise<{ projectId: string }>
+    params: Promise<{ projectSlug: string }>
 }) => {
 
-    const { projectId } = use(params)
+    const { projectSlug } = use(params)
     const { projects, isLoading } = useProjects()
 
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
 
-    const project = projects.find(pjt => pjt.id == projectId)
+    const project = projects.find(pjt => pjt.slug == projectSlug)
 
     function getTwoRandomIndexes(length: number, excludeIndex?: number): [number, number] {
         if (length === 0 || length === 1) return [-1, -1];
@@ -51,7 +53,7 @@ const ProjectPage = ({
         return [first, second];
     }
 
-    const currentIndex = projects.findIndex(pjt => pjt.id == projectId);
+    const currentIndex = projects.findIndex(pjt => pjt.slug == projectSlug);
     const [firstIndex, secondIndex] = getTwoRandomIndexes(projects.length, currentIndex);
 
 
@@ -85,20 +87,22 @@ const ProjectPage = ({
                             ))
                         )
                             :
-                            project?.image_urls.map((url, index) => (
-                                <div
+                            project?.images.map((image, index) => {
+                                const imageUrl = urlFor(image);
+                                
+                                return <div
                                     key={index}
-                                    onClick={() => setSelectedImage(url)}
+                                    onClick={() => setSelectedImage(imageUrl)}
                                     className="overflow-hidden md:h-60 h-48 border border-brd rounded-md">
                                     <Image
-                                        src={url}
+                                        src={imageUrl}
                                         width={500}
                                         height={500}
                                         className="w-full h-full object-cover object-center rounded-md cursor-pointer"
                                         alt="Image of the project"
                                     />
                                 </div>
-                            ))
+                            })
                     }
                 </div>
 
@@ -153,7 +157,7 @@ const ProjectPage = ({
 
                     <div className="btns text-sm mt-8 flex gap-4">
                         <Link
-                            href={project?.github_url || ""}
+                            href={project?.githubUrl || ""}
                             target='_blank'
                             className="flex items-center justify-center gap-2 px-3 py-2 font-medium text-black bg-primary rounded-md hover:opacity-60 transition duration-[400ms]"
                         >
@@ -161,10 +165,10 @@ const ProjectPage = ({
                             <span>View on GitHub</span>
                         </Link>
 
-                        {project?.live_url &&
-                            project?.live_url !== "" &&
+                        {project?.liveUrl &&
+                            project?.liveUrl !== "" &&
                             <Link
-                                href={project?.live_url || "#"}
+                                href={project?.liveUrl || "#"}
                                 target={`${isLoading ? "" : "_blank"}`}
                                 className="flex items-center justify-center gap-2 border border-brd px-3 py-2 font-medium rounded-md hover:bg-btn-secondary hover:opacity-60 transition duration-[400ms]"
                             >
@@ -197,8 +201,8 @@ const ProjectPage = ({
                                         return (
                                             <LinkCard
                                                 key={index}
-                                                href={`/projects/${project.id}`}
-                                                imageSrc={project.image_urls[0]}
+                                                href={`/projects/${project.slug}`}
+                                                imageSrc={urlFor(project.images[0])}
                                                 title={project.title}
                                                 description={project.summary}
                                             />

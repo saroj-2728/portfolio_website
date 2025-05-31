@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { urlFor } from "@/sanity/sanityImage";
 
 import LinkCard from "@/components/ui/LinkCard";
 import LinkCardSkeleton from "@/components/skeletons/LinkCardSkeleton";
@@ -70,8 +71,8 @@ export default function Home() {
                 projects.slice(0, 2).map((drop, index) => (
                   <LinkCard
                     key={index}
-                    href={`/projects/${drop.id}`}
-                    imageSrc={drop.image_urls[0]}
+                    href={`/projects/${drop.slug}`}
+                    imageSrc={urlFor(drop.images[0])}
                     title={drop.title}
                     description={drop.summary}
                   // tag={drop.tags[0]}

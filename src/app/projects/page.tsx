@@ -2,6 +2,7 @@
 import LinkCard from "@/components/ui/LinkCard";
 import LinkCardSkeleton from "@/components/skeletons/LinkCardSkeleton";
 import { useProjects } from "@/contexts/ProjectsContext";
+import { urlFor } from "@/sanity/sanityImage";
 
 
 const ProjectsPage = () => {
@@ -38,8 +39,8 @@ const ProjectsPage = () => {
                                 projects.map((drop, index) => (
                                     <LinkCard
                                         key={index}
-                                        href={`/projects/${drop.id}`}
-                                        imageSrc={drop.image_urls[0]}
+                                        href={`/projects/${drop.slug}`}
+                                        imageSrc={urlFor(drop.images[0])}
                                         title={drop.title}
                                         description={drop.summary}
                                     // tag={drop.tags[0]}

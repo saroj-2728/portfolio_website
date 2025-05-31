@@ -1,24 +1,17 @@
-export const dynamic = 'force-static'
-import { query } from "../../../../lib/db";
-import type { Project } from "../../../../lib/db";
+import { NextResponse } from 'next/server';
+import { client } from '@/sanity/client';
+import { SERVICES_QUERY } from "@/sanity/queries";
+import type { Service } from "@/types/projectType";
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export async function GET(request: Request) {
+export async function GET() {
     try {
-        const projects: Project[] = await query<Project>('SELECT * FROM services');
-
-        return new Response(JSON.stringify(projects), {
-            status: 200,
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
+        const services: Service[] = await client.fetch(SERVICES_QUERY, );
+        return NextResponse.json(services);
     }
     catch (error) {
-        console.error("Error fetching projects:", error);
-        return new Response(
-            JSON.stringify({ error: 'Failed to fetch projects' }),
-            { status: 500 }
-        );
+        console.error("Sanity fetch failed:", error);
+        return new NextResponse(
+            "Failed to fetch services",
+            { status: 500 });
     }
 }

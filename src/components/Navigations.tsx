@@ -69,7 +69,7 @@ const NavLinks = ({ navLinks, pathname, showNumbers, onClick }: NavLinksProps) =
     return (
         <>
             {navLinks.map((nav, index) => (
-                <li key={index} className={`${pathname === nav.href ? 'bg-icon border-brd font-semibold text-primary' : ''} flex flex-row items-center justify-start gap-3 rounded-md hover:font-semibold hover:text-primary transition duration-[400ms]`}>
+                <li key={index} className={`${pathname === nav.href ? 'bg-icon border-brd font-bold text-primary' : ''} flex flex-row items-center justify-start gap-3 rounded-md font-semibold hover:text-primary transition duration-[400ms]`}>
                     <Link
                         target={nav.href.startsWith("http") ? "_blank" : ""}
                         className="h-full w-full py-2 px-2" href={nav.href}
