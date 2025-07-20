@@ -1,6 +1,6 @@
 'use client'
-import Card from "./Card"
-import Badge from "./Badge"
+import Card from "../ui/Card"
+import Badge from "../ui/Badge"
 import type { TimelineItem } from "@/constants/achievements"
 
 const TimelineCard = (

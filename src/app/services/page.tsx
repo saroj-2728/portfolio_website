@@ -1,15 +1,19 @@
 'use client'
 import { useState, useEffect } from 'react'
+import { motion } from "framer-motion";
 
-import ServiceCard from "@/components/ui/ServiceCard"
+import ServiceCard from "@/components/cards/ServiceCard"
 import ServiceCardSkeleton from "@/components/skeletons/ServiceCardSkeleton"
 import type { ServiceType } from "@/constants/services"
+import { useScrollAnimation, fadeUpVariants, slideLeftVariants, staggerContainer, staggerItem } from "@/hooks/useScrollAnimation";
 
 
 const ServicesPage = () => {
 
   const [services, setServices] = useState<ServiceType[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const heroAnimation = useScrollAnimation({ threshold: 0.3, triggerOnce: false, bidirectional: true });
+  const servicesAnimation = useScrollAnimation({ threshold: 0.2, triggerOnce: false, bidirectional: true });
 
   useEffect(() => {
     try {
@@ -31,34 +35,63 @@ const ServicesPage = () => {
     <main className="flex flex-col items-center min-h-screen pt-10">
       <div className="max-w-[960px] w-full mx-auto">
         {/* Header section */}
-        <header className="me md:p-12 md:pb-0 pb-12 space-y-6">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary">
+        <motion.header
+          ref={heroAnimation.ref}
+          className="me md:p-12 md:pb-0 pb-12 space-y-6"
+          initial="hidden"
+          animate={heroAnimation.controls}
+          variants={fadeUpVariants}
+        >
+          <motion.h1
+            className="text-4xl md:text-5xl font-bold text-primary"
+            variants={slideLeftVariants}
+            transition={{ delay: 0.1 }}
+          >
             Services
-          </h1>
-          <p className="mt-3 text-lg max-w-xl">
+          </motion.h1>
+          <motion.p
+            className="mt-3 text-lg max-w-xl"
+            variants={fadeUpVariants}
+            transition={{ delay: 0.2 }}
+          >
             Explore the wide range of services I offer, designed to bring your ideas to life with innovation and expertise.
-          </p>
-        </header>
+          </motion.p>
+        </motion.header>
 
         {/* Services */}
-        <div className="flex flex-col md:p-12 pb-20 space-y-6">
+        <motion.div
+          ref={servicesAnimation.ref}
+          className="flex flex-col md:p-12 pb-20 space-y-6"
+          initial="hidden"
+          animate={servicesAnimation.controls}
+          variants={staggerContainer}
+        >
           {
             isLoading ? (
               Array.from({ length: 4 }).map((_, index) => (
-                <ServiceCardSkeleton key={index} />
+                <motion.div
+                  key={index}
+                  variants={staggerItem}
+                >
+                  <ServiceCardSkeleton />
+                </motion.div>
               ))
             )
               :
               services.map((service: ServiceType, index: number) => (
-                <ServiceCard
+                <motion.div
                   key={index}
-                  title={service.title}
-                  description={service.description}
-                  details={service.details}
-                />
+                  variants={staggerItem}
+                >
+                  <ServiceCard
+                    title={service.title}
+                    description={service.description}
+                    details={service.details}
+                  />
+                </motion.div>
               ))
           }
-        </div>
+        </motion.div>
 
       </div>
     </main>

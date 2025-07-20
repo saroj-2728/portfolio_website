@@ -1,7 +1,7 @@
 'use client'
 import { useState } from "react";
-import Card from "./Card";
-import Button from "./Button";
+import Card from "../ui/Card";
+import Button from "../ui/Button";
 import { IoCopyOutline } from "react-icons/io5";
 import type { ServiceType } from "@/constants/services";
 

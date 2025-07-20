@@ -1,7 +1,7 @@
 'use client'
 // import Link from "next/link"
 
-import LinkTiles from "@/components/ui/LinkTiles"
+import LinkTiles from "@/components/cards/LinkTiles"
 // import LinkTilesSkeleton from "@/components/skeletons/LinkTilesSkeleton"
 // import NewsLetterSubscription from "@/components/NewsLetterSub"
 

@@ -10,7 +10,7 @@ import { FaGithub } from 'react-icons/fa'
 import { IoClose } from 'react-icons/io5';
 
 import { useProjects } from '@/contexts/ProjectsContext'
-import ProjectCard from '@/components/ui/ProjectCard'
+import ProjectCard from '@/components/cards/ProjectCard'
 
 import ImageSkeleton from '@/components/skeletons/ImageSkeleton'
 import LinkCardSkeleton from '@/components/skeletons/LinkCardSkeleton'

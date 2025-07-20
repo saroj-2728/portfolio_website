@@ -1,6 +1,6 @@
 'use client'
-import Card from "./Card"
-import Button from "./Button"
+import Card from "../ui/Card"
+import Button from "../ui/Button"
 
 interface FeedCardProps {
     title: string
