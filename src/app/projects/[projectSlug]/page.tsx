@@ -10,7 +10,7 @@ import { FaGithub } from 'react-icons/fa'
 import { IoClose } from 'react-icons/io5';
 
 import { useProjects } from '@/contexts/ProjectsContext'
-import LinkCard from '@/components/ui/LinkCard'
+import ProjectCard from '@/components/ui/ProjectCard'
 
 import ImageSkeleton from '@/components/skeletons/ImageSkeleton'
 import LinkCardSkeleton from '@/components/skeletons/LinkCardSkeleton'
@@ -89,7 +89,7 @@ const ProjectPage = ({
                             :
                             project?.images.map((image, index) => {
                                 const imageUrl = urlFor(image);
-                                
+
                                 return <div
                                     key={index}
                                     onClick={() => setSelectedImage(imageUrl)}
@@ -199,7 +199,7 @@ const ProjectPage = ({
                                         const project = projects[index];
 
                                         return (
-                                            <LinkCard
+                                            <ProjectCard
                                                 key={index}
                                                 href={`/projects/${project.slug}`}
                                                 imageSrc={urlFor(project.images[0])}

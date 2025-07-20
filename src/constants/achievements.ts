@@ -1,4 +1,4 @@
-export interface TimelineItem  {
+export interface TimelineItem {
     date: string;
     title: string;
     subtitle?: string;
@@ -36,5 +36,15 @@ export const experienceData: TimelineItem[] = [
         subtitle: 'Upwork & Independent Clients',
         description:
             'Developing dynamic and scalable web applications using Next.js, React, and Express.js. Specializing in dashboards, and custom web solutions tailored to client needs.',
+    },
+];
+
+export const awardsData: TimelineItem[] = [
+    {
+        date: '2024',
+        title: 'Clash of Code First Runner Up',
+        subtitle: 'ECAST, Thapathali Campus, Yathartha 2081',
+        description:
+            'Achieved second place in a competitive coding event, showcasing problem-solving skills and proficiency in algorithms and data structures.',
     },
 ];

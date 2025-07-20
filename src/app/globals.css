@@ -1,14 +1,56 @@
 @import 'tailwindcss';
 
 @theme {
+  /* Base Colors */
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+
+  /* Text Colors */
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
+  --color-muted: var(--muted);
   --color-accent: var(--accent);
-  --color-icon: var(--icon);
-  --color-brd: var(--brd);
+
+  /* Interactive Colors */
   --color-btn-primary: var(--btn-primary);
   --color-btn-secondary: var(--btn-secondary);
+  --color-btn-accent: var(--btn-accent);
+  --color-btn-success: var(--btn-success);
+  --color-btn-warning: var(--btn-warning);
+  --color-btn-danger: var(--btn-danger);
+
+  /* Border & Divider Colors */
+  --color-brd: var(--brd);
+  --color-brd-hover: var(--brd-hover);
+  --color-brd-focus: var(--brd-focus);
+
+  /* Interactive States */
+  --color-hover: var(--hover);
+  --color-active: var(--active);
+  --color-focus: var(--focus);
+
+  /* Gradient Colors */
+  --color-gradient-start: var(--gradient-start);
+  --color-gradient-end: var(--gradient-end);
+  --color-gradient-accent: var(--gradient-accent);
+  --color-gradient-accent-alt: var(--gradient-accent-alt);
+
+  /* Icon Colors */
+  --color-icon: var(--icon);
+  --color-icon-hover: var(--icon-hover);
+  --color-icon-muted: var(--icon-muted);
+
+  /* Status Colors */
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --color-info: var(--info);
+
+  /* Glass/Transparency Effects */
+  --color-glass-bg: var(--glass-bg);
+  --color-glass-border: var(--glass-border);
+  --color-backdrop-blur: var(--backdrop-blur);
 }
 
 /*
@@ -31,14 +73,56 @@
 }
 
 :root {
+  /* Base Colors */
   --background: black;
-  --accent: #050505;
-  --secondary: #A5A5A5;
+  --surface: #0a0a0a;
+  --surface-elevated: #151515;
+
+  /* Text Colors */
   --primary: #ffffff;
-  --icon: #161616;
-  --brd: #f3f4f61f;
+  --secondary: #A5A5A5;
+  --muted: #666666;
+  --accent: #050505;
+
+  /* Interactive Colors */
   --btn-primary: white;
   --btn-secondary: #161616;
+  --btn-accent: #3b82f6;
+  --btn-success: #10b981;
+  --btn-warning: #f59e0b;
+  --btn-danger: #ef4444;
+
+  /* Border & Divider Colors */
+  --brd: #f3f4f61f;
+  --brd-hover: #f3f4f630;
+  --brd-focus: #3b82f650;
+
+  /* Interactive States */
+  --hover: #ffffff08;
+  --active: #ffffff12;
+  --focus: #3b82f620;
+
+  /* Gradient Colors */
+  --gradient-start: #1a1a1a;
+  --gradient-end: #0a0a0a;
+  --gradient-accent: #3b82f6;
+  --gradient-accent-alt: #8b5cf6;
+
+  /* Icon Colors */
+  --icon: #161616;
+  --icon-hover: #3b82f6;
+  --icon-muted: #666666;
+
+  /* Status Colors */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --info: #3b82f6;
+
+  /* Glass/Transparency Effects */
+  --glass-bg: #ffffff05;
+  --glass-border: #ffffff10;
+  --backdrop-blur: rgba(0, 0, 0, 0.8);
 }
 
 .scrollbar-hidden::-webkit-scrollbar {

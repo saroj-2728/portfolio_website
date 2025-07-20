@@ -2,14 +2,15 @@ import Card from "./Card";
 import Badge from "./Badge";
 
 interface ProjectCardProps {
-    href: string;
-    imageSrc: string;
-    title: string;
-    description: string;
+    href?: string;
+    imageSrc?: string;
+    title?: string;
+    description?: string;
     tag?: string;
+    loading?: boolean;
 }
 
-const ProjectCard = ({ href, imageSrc, title, description, tag }: ProjectCardProps) => {
+const ProjectCard = ({ href, imageSrc, title, description, tag, loading }: ProjectCardProps) => {
     return (
         <Card
             href={href}
@@ -17,12 +18,13 @@ const ProjectCard = ({ href, imageSrc, title, description, tag }: ProjectCardPro
             imageAlt="Image of the project"
             title={title}
             description={description}
+            loading={loading}
             variant="default"
             size="sm"
             interactive={true}
             hoverEffect="scale"
             className="overflow-hidden text-sm"
-            imageClassName="md:h-48 h-40 object-cover object-center"
+            imageClassName="md:h-40 h-40 object-cover object-center"
             contentClassName="text-sm"
             badge={tag ? (
                 <Badge variant="secondary" size="xs">

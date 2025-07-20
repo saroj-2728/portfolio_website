@@ -1,5 +1,5 @@
 'use client'
-import LinkCard from "@/components/ui/LinkCard";
+import ProjectCard from "@/components/ui/ProjectCard";
 import LinkCardSkeleton from "@/components/skeletons/LinkCardSkeleton";
 import { useProjects } from "@/contexts/ProjectsContext";
 import { urlFor } from "@/sanity/sanityImage";
@@ -37,7 +37,7 @@ const ProjectsPage = () => {
                             )
                                 :
                                 projects.map((drop, index) => (
-                                    <LinkCard
+                                    <ProjectCard
                                         key={index}
                                         href={`/projects/${drop.slug}`}
                                         imageSrc={urlFor(drop.images[0])}

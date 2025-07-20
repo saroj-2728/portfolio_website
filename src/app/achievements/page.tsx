@@ -1,8 +1,7 @@
-import TimelineCard from "@/components/ui/TimelineCard";
-import { educationData, experienceData } from "@/constants/achievements";
+import TreeSection from "@/components/ui/TreeSection";
+import { educationData, experienceData, awardsData } from "@/constants/achievements";
 
 const Achievements = () => {
-
     return (
         <main className="flex flex-col items-center min-h-screen pt-10">
             <div className="max-w-[960px] w-full mx-auto">
@@ -16,65 +15,38 @@ const Achievements = () => {
                     </p>
                 </header>
 
-
-                {/* Education Timeline Section */}
-                <section className="md:p-12 md:pb-0 pb-12">
-                    <div className="title mb-6">
-                        <h2 className="font-bold text-primary">Education Journey</h2>
-                    </div>
-                    <div className="relative">
-                        {/* Timeline Line */}
-                        <div className="absolute left-2 top-0 bottom-0 w-0.5 bg-secondary rounded-full" />
-
-                        {/* Timeline Items */}
-                        <div className="space-y-6">
-                            {educationData.map((item, index) => (
-                                <TimelineCard key={index} timelineItem={item} />
-                            ))}
-
-                        </div>
-                    </div>
-                </section>
-                
-
-                {/* Experiences */}
+                {/* Interactive Tree Timeline */}
                 <section className="md:p-12 pb-20">
-                    <div className="title mb-6">
-                        <h2 className="font-bold text-primary">Professional Experiences</h2>
-                    </div>
-                    <div className="relative">
-                        {/* Timeline Line */}
-                        <div className="absolute left-2 top-0 bottom-0 w-0.5 bg-secondary rounded-full" />
+                    <div className="w-full max-w-6xl mx-auto px-4">
+                        <div className="space-y-16 md:space-y-30">
 
-                        {/* Timeline Items */}
-                        <div className="space-y-4">
-                            {experienceData.map((item, index) => (
-                                <TimelineCard key={index} timelineItem={item} />
-                            ))}
+                            {/* Education Section */}
+                            <TreeSection
+                                title="Education Journey"
+                                items={educationData}
+                                category="education"
+                                defaultExpanded={true}
+                            />
+
+                            {/* Experience Section */}
+                            <TreeSection
+                                title="Professional Experience"
+                                items={experienceData}
+                                category="experience"
+                                defaultExpanded={true}
+                            />
+
+                            {/* Awards Section */}
+                            <TreeSection
+                                title="Achievements & Awards"
+                                items={awardsData}
+                                category="awards"
+                                defaultExpanded={true}
+                            />
 
                         </div>
                     </div>
                 </section>
-
-
-                {/* Awards */}
-                {/* <section className="p-12 pt-0 pb-20">
-                    <div className="title mb-6">
-                        <h2 className="font-bold text-primary">Achievements & Awards</h2>
-                    </div>
-                    <div className="relative">
-                        <div className="absolute left-2 top-0 bottom-0 w-0.5 bg-secondary rounded-full" />
-
-                        <div className="space-y-4">
-                            {experienceData.map((item, index) => (
-                                <TimelineCard key={index} timelineItem={item} />
-                            ))}
-
-                        </div>
-                    </div>
-                </section> */}
-
-
             </div>
         </main>
     )
