@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { LXGW_WenKai_TC } from "next/font/google";
+import { LXGW_WenKai_TC, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 import Navbar from "@/components/Navbar";
@@ -15,6 +15,13 @@ const wenkaiFont = LXGW_WenKai_TC({
   display: 'swap',
 })
 
+const jetBrainsMono = JetBrains_Mono({
+  weight: ['400', '500', '600'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-jetbrains-mono',
+});
+
 export const metadata: Metadata = {
   title: "Saroj Pandey",
   description: "Personal website of Saroj Pandey",
@@ -28,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${wenkaiFont.className} antialiased bg-background text-secondary min-h-screen`}
+        className={`${wenkaiFont.className} ${jetBrainsMono.variable} antialiased bg-background text-secondary min-h-screen`}
       >
         <KeyPressNavigation>
           <ProjectsProvider>
