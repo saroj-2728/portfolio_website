@@ -18,14 +18,14 @@ const highlightJson = (json: string) => {
             let cls = 'text-[var(--code-number)]';
             if (/^"/.test(match)) {
                 if (/:$/.test(match)) {
-                    cls = 'text-[var(--code-key)]'; // key
+                    cls = 'text-code-key'; // key
                 } else {
-                    cls = 'text-[var(--code-string)]'; // string
+                    cls = 'text-code-string'; // string
                 }
             } else if (/true|false/.test(match)) {
-                cls = 'text-[var(--code-boolean)]'; // booleans
+                cls = 'text-code-boolean'; // booleans
             } else if (/null/.test(match)) {
-                cls = 'text-[var(--code-null)]'; // null
+                cls = 'text-code-null'; // null
             }
             return `<span class="${cls}">${match}</span>`;
         }

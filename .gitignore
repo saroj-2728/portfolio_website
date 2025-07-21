@@ -42,3 +42,4 @@ next-env.d.ts
 
 # Temp files during development
 notes.txt
+diff.txt

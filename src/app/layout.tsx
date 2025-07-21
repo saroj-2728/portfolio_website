@@ -67,7 +67,7 @@ export default function RootLayout({
                 </div>
                 <MobileNav />
                 <div className="md:flex-1">
-                  <div className="flex-1 max-w-[1080px] mx-auto px-6 md:px-0">
+                  <div className="flex-1 max-w-[1080px] mx-auto mb-20 px-6 md:px-0">
                     {children}
                   </div>
                   <Footer />
