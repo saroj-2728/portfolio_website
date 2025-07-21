@@ -146,13 +146,14 @@
   --glass-border: #ffffff10;
   --backdrop-blur: blur(8px);
 
-  /* Terminal Colors - Darker Theme */
-  --terminal-bg: #0d1117;
-  --terminal-header: #161b22;
-  --terminal-text: #c9d1d9;
-  --terminal-border: #21262d;
-  --terminal-green: #7c3aed;
-  --terminal-muted: #8b949e;
+  /* Terminal Colors - Darker and Cooler */
+  --terminal-bg: #070a0f;          /* very dark, almost black with blue-green tint */
+  --terminal-header: #0d1218;      /* darker and cooler blue-black */
+  --terminal-text: #9aa5b0;        /* cooler, muted gray-blue */
+  --terminal-border: #121a24;      /* dark navy with greenish undertone */
+  --terminal-green: #7c3aed;       /* unchanged */
+  --terminal-muted: #55616a;       /* deep cool gray-blue */
+  
 
   /* Code highlighting */
   --code-key: #7c3aed;        /* Purple for keys */

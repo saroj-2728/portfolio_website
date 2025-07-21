@@ -114,7 +114,7 @@ const DeveloperInfoPopup = ({ isOpen, onClose }: DeveloperInfoPopupProps) => {
                         <AnimatedImage
                             src="https://res.cloudinary.com/djfns59te/image/upload/v1745612812/profileImage_1_fp528i.jpg"
                             alt="Saroj Pandey"
-                            className="rounded-lg shadow-2xl"
+                            className="rounded-lg shadow-2xl border-2 border-terminal-green"
                             width={300}
                             height={400}
                             hoverEffect="scale"

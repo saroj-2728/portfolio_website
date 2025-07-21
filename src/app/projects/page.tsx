@@ -1,7 +1,7 @@
 'use client'
 import { motion } from "framer-motion";
 import { useScrollAnimation, fadeUpVariants, slideLeftVariants } from "@/hooks/useScrollAnimation";
-import { ProjectsSection } from "@/components/sections/home";
+import { ProjectsSection } from "@/components/sections";
 
 
 const ProjectsPage = () => {
