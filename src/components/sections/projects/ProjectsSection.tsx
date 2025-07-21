@@ -30,7 +30,7 @@ export default function ProjectsSection() {
             >
                 {
                     isLoading ? (
-                        Array.from({ length: 2 }).map((_, index) => (
+                        Array.from({ length: 4 }).map((_, index) => (
                             <motion.div
                                 key={index}
                                 variants={staggerItem}
@@ -41,7 +41,7 @@ export default function ProjectsSection() {
                             </motion.div>
                         ))
                     ) : (
-                        projects.slice(0, 2).map((drop, index) => (
+                        projects.map((drop, index) => (
                             <motion.div
                                 key={index}
                                 variants={staggerItem}

@@ -1,16 +1,12 @@
 'use client'
 import { motion } from "framer-motion";
-import ProjectCard from "@/components/cards/ProjectCard";
-import { useProjects } from "@/contexts/ProjectsContext";
-import { urlFor } from "@/sanity/sanityImage";
-import { useScrollAnimation, fadeUpVariants, slideLeftVariants, staggerContainer, staggerItem } from "@/hooks/useScrollAnimation";
+import { useScrollAnimation, fadeUpVariants, slideLeftVariants } from "@/hooks/useScrollAnimation";
+import { ProjectsSection } from "@/components/sections/home";
 
 
 const ProjectsPage = () => {
 
-    const { projects, isLoading } = useProjects();
     const heroAnimation = useScrollAnimation({ threshold: 0.3, triggerOnce: false, bidirectional: true });
-    const projectsAnimation = useScrollAnimation({ threshold: 0.2, triggerOnce: false, bidirectional: true });
 
     return (
         <main className="flex flex-col items-center min-h-screen pt-10">
@@ -40,52 +36,10 @@ const ProjectsPage = () => {
                 </motion.header>
 
 
-                {/* New drops */}
-                <motion.div
-                    ref={projectsAnimation.ref}
-                    className="newDrops md:p-12 pb-20 space-y-6"
-                    initial="hidden"
-                    animate={projectsAnimation.controls}
-                    variants={fadeUpVariants}
-                >
-                    {/* <div className="title">
-                        <h2 className="font-bold text-primary">New Drops</h2>
-                    </div> */}
-                    <motion.div
-                        className="grid grid-cols-1 gap-8 sm:grid-cols-2"
-                        variants={staggerContainer}
-                    >
-                        {
-                            isLoading ? (
-                                Array.from({ length: 4 }).map((_, index) => (
-                                    <motion.div
-                                        key={index}
-                                        variants={staggerItem}
-                                    >
-                                        <ProjectCard
-                                            loading={true}
-                                        />
-                                    </motion.div>
-                                ))
-                            )
-                                :
-                                projects.map((drop, index) => (
-                                    <motion.div
-                                        key={index}
-                                        variants={staggerItem}
-                                    >
-                                        <ProjectCard
-                                            href={`/projects/${drop.slug}`}
-                                            imageSrc={urlFor(drop.images[0])}
-                                            title={drop.title}
-                                            description={drop.summary}
-                                        // tag={drop.tags[0]}
-                                        />
-                                    </motion.div>
-                                ))
-                        }
-                    </motion.div>
-                </motion.div>
+                {/* Projects section */}
+                <div className="mb-20">
+                    <ProjectsSection />
+                </div>
             </div>
         </main>
     )

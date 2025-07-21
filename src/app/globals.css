@@ -60,8 +60,19 @@
   --color-terminal-green: var(--terminal-green);
   --color-terminal-muted: var(--terminal-muted);
 
+  /* Code Highlighting Colors */
+  --color-code-key: var(--code-key);
+  --color-code-string: var(--code-string);
+  --color-code-number: var(--code-number);
+  --color-code-boolean: var(--code-boolean);
+  --color-code-null: var(--code-null);
+  --color-code-punctuation: var(--code-punctuation);
+
   /* Font Variables */
+  --font-wenkai: var(--font-wenkai);
+  --font-space-grotesk: var(--font-space-grotesk);
   --font-jetbrains-mono: var(--font-jetbrains-mono);
+  --font-fira-code: var(--font-fira-code);
 }
 
 /*
@@ -142,6 +153,14 @@
   --terminal-border: #21262d;
   --terminal-green: #7c3aed;
   --terminal-muted: #8b949e;
+
+  /* Code highlighting */
+  --code-key: #7c3aed;        /* Purple for keys */
+  --code-string: #10b981;     /* Green for strings */
+  --code-number: #f59e0b;     /* Amber for numbers */
+  --code-boolean: #ef4444;    /* Red for true/false */
+  --code-null: #9ca3af;       /* Gray for null */
+  --code-punctuation: #d1d5db;/* Light gray for { } : , */
 }
 
 .scrollbar-hidden::-webkit-scrollbar {
@@ -171,4 +190,9 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #2a2a2a;
+}
+
+@keyframes progress {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
