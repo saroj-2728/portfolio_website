@@ -103,7 +103,7 @@ const Toast = ({
             {/* Progress bar */}
             {duration > 0 && (
                 <motion.div
-                    className={`absolute top-0 left-0 h-1 ${styles.progress}`}
+                    className={`absolute bottom-0 left-0 h-1 w-full ${styles.progress}`}
                     initial={{ width: '100%' }}
                     animate={{ width: '0%' }}
                     transition={{ duration: duration / 1000, ease: 'linear' }}
@@ -149,7 +149,7 @@ const Toast = ({
                 {/* Dismiss button */}
                 {dismissible && (
                     <motion.button
-                        className="flex-shrink-0 text-secondary hover:text-primary transition-colors p-1 -m-1"
+                        className="flex-shrink-0 text-secondary hover:text-primary transition-colors p-1 -m-1 cursor-pointer"
                         onClick={() => onDismiss(id)}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}

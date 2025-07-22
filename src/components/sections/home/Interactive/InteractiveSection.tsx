@@ -22,7 +22,7 @@ export default function InteractiveSection() {
     return (
         <motion.section
             ref={sectionAnimation.ref}
-            className="interactive-section md:p-12 pb-20 grid grid-cols-1 md:grid-cols-2 items-start gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 items-start gap-8 md:gap-12"
             initial="hidden"
             animate={sectionAnimation.controls}
             variants={slideLeftVariants}

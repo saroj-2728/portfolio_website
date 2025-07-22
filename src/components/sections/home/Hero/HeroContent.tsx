@@ -5,7 +5,7 @@ import { fadeUpVariants, staggerItem } from "@/hooks/useScrollAnimation";
 export default function HeroContent() {
 
   return (
-    <motion.div className="space-y-8 md:space-y-12" variants={staggerItem}>
+    <motion.div className="space-y-10 md:space-y-12" variants={staggerItem}>
       <motion.p
         className="text-xl md:text-2xl lg:text-3xl font-wenkai font-light text-secondary max-w-3xl leading-relaxed"
         variants={fadeUpVariants}

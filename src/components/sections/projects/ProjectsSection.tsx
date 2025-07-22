@@ -12,7 +12,7 @@ export default function ProjectsSection() {
     return (
         <motion.section
             ref={projectsAnimation.ref}
-            className="newDrops md:p-12 md:pb-0 pb-12 space-y-6"
+            className="space-y-6"
             initial="hidden"
             animate={projectsAnimation.controls}
             variants={fadeUpVariants}

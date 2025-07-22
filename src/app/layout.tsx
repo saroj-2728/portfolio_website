@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import { ProjectsProvider } from "@/contexts/ProjectsContext";
 import { TerminalProvider } from "@/contexts/TerminalContext";
 import MobileNav from "@/components/MobileNav";
-import GlobalTerminalButton from "@/components/terminal/GlobalTerminalButton";
+// import GlobalTerminalButton from "@/components/terminal/GlobalTerminalButton";
 import GlobalTerminal from "@/components/terminal/GlobalTerminal";
 
 // Main body font - beautiful Wenkai font
@@ -61,21 +61,29 @@ export default function RootLayout({
         <TerminalProvider>
           <KeyPressNavigation>
             <ProjectsProvider>
-              <div className="flex md:flex-row flex-col">
+              <div className="flex md:flex-row flex-col min-h-screen">
+                {/* Sidebar */}
                 <div className="hidden md:block sticky top-0 w-[240px] h-screen border-r border-brd bg-accent">
                   <Navbar />
                 </div>
+
+                {/* Mobile Nav */}
                 <MobileNav />
-                <div className="md:flex-1">
-                  <div className="flex-1 max-w-[1080px] mx-auto mb-20 px-6 md:px-0">
+
+                {/* Main Content Area */}
+                <div className="md:flex-1 flex flex-col min-h-screen">
+                  {/* Content */}
+                  <main className="flex-1">
                     {children}
-                  </div>
+                  </main>
+
+                  {/* Footer */}
                   <Footer />
                 </div>
               </div>
-              
+
               {/* Global Terminal Components */}
-              <GlobalTerminalButton />
+              {/* <GlobalTerminalButton /> */}
               <GlobalTerminal />
             </ProjectsProvider>
           </KeyPressNavigation>

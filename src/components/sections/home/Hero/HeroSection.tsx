@@ -37,7 +37,7 @@ export default function HeroSection() {
   return (
     <motion.header
       ref={heroAnimation.ref}
-      className="me md:p-12 md:pb-0 pb-16 space-y-12 md:space-y-16"
+      className="space-y-12 md:space-y-16"
       initial="hidden"
       animate={heroAnimation.controls}
       variants={staggerContainer}
