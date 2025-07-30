@@ -9,9 +9,9 @@ export default function StackSection() {
     const stackAnimation = useScrollAnimation({ threshold: 0.1, bidirectional: true });
 
     return (
-        <motion.section
+        <motion.div
             ref={stackAnimation.ref}
-            className="thoughts md:p-12 pb-20 space-y-6"
+            className="thoughts space-y-6"
             initial="hidden"
             animate={stackAnimation.controls}
             variants={fadeUpVariants}
@@ -64,6 +64,6 @@ export default function StackSection() {
                     </motion.div>
                 </div>
             </motion.div>
-        </motion.section>
+        </motion.div>
     );
 }

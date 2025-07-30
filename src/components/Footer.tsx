@@ -59,7 +59,7 @@ const Footer = () => {
 
                                 <Link
                                     href="/contact"
-                                    className="group inline-flex min-w-max items-center gap-1 font-semibold text-terminal-green hover:text-gradient-to-r hover:from-gradient-accent hover:to-gradient-accent-alt transition-all"
+                                    className="group inline-flex min-w-max items-center gap-1 font-semibold text-link hover:text-gradient-to-r hover:from-gradient-accent hover:to-gradient-accent-alt transition-all"
                                 >
                                     <span className="relative group-hover:underline underline-offset-4">
                                         Reach out
@@ -113,7 +113,7 @@ const FooterLinkBlocks = ({ title, links }: { title: string; links: FooterLink[]
                         href={link.href}
                         target={link.href.startsWith("http") ? "_blank" : undefined}
                         rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                        className="relative max-w-max text-secondary hover:text-terminal-green transition-all duration-300
+                        className="relative max-w-max text-secondary hover:text-link transition-all duration-300
                             before:absolute before:-bottom-[2px] before:left-0 before:w-0 before:h-[2px] 
                             before:bg-gradient-to-r before:from-gradient-accent before:to-gradient-accent-alt
                             before:transition-all before:duration-300 hover:before:w-full"

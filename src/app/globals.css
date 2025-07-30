@@ -12,6 +12,9 @@
   --color-muted: var(--muted);
   --color-accent: var(--accent);
 
+  /* Link */
+  --color-link: var(--link);
+
   /* Interactive Colors */
   --color-btn-primary: var(--btn-primary);
   --color-btn-secondary: var(--btn-secondary);
@@ -105,6 +108,9 @@
   --secondary: #A5A5A5;
   --muted: #666666;
   --accent: #050505;
+
+  /* Link */
+  --link: #3b82f6;
 
   /* Interactive Colors */
   --btn-primary: white;

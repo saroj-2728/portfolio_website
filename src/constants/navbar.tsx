@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { MdOutlineExplore, MdMiscellaneousServices, MdOutlineFeed, MdOutlineMailOutline } from "react-icons/md";
+import { MdOutlineExplore, MdOutlineFeed, MdOutlineMailOutline } from "react-icons/md";
 import { LiaProjectDiagramSolid } from "react-icons/lia";
 import { BiFace } from "react-icons/bi";
 import { TfiThought } from "react-icons/tfi";
@@ -35,15 +35,9 @@ export const navigation: NavItem[] = [
     icon: <LiaProjectDiagramSolid className="size-6 p-0 box-content" />
   },
   {
-    title: "Services",
-    href: "/services",
-    keyNav: "4",
-    icon: <MdMiscellaneousServices className="size-6 p-0 box-content" />
-  },
-  {
     title: "About",
     href: "/about",
-    keyNav: "5",
+    keyNav: "4",
     icon: <BiFace className="size-6 p-0 box-content" />
   },
 ]
@@ -52,19 +46,19 @@ export const resourceNavigation: NavItem[] = [
   {
     title: "Feed",
     href: "/feed",
-    keyNav: "6",
+    keyNav: "5",
     icon: <MdOutlineFeed className="size-6 p-0 box-content" />
   },
   {
     title: "Thoughts",
     href: "/thoughts",
-    keyNav: "7",
+    keyNav: "6",
     icon: <TfiThought className="size-6 p-0 box-content" />
   },
   {
     title: "Stack",
     href: "/stack",
-    keyNav: "8",
+    keyNav: "7",
     icon: <PiStack className="size-6 p-0 box-content" />
   },
 ]

@@ -29,18 +29,15 @@ const KeyPressNavigation = ({ children }: { children: React.ReactNode }) => {
           router.push("/projects");
           break;
         case "4":
-          router.push("/services");
-          break;
-        case "5":
           router.push("/about");
           break;
-        case "6":
+        case "5":
           router.push("/feed");
           break;
-        case "7":
+        case "6":
           router.push("/thoughts");
           break;
-        case "8":
+        case "7":
           router.push("/stack");
           break;
         case "c":

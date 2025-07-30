@@ -83,8 +83,6 @@ export default function GitHubContributions() {
     fetchData();
   }, []);
 
-  console.log('GitHub Contributions Data:', data);
-
   if (loading || error) {
     return (
       <motion.div

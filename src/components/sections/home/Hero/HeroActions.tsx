@@ -14,7 +14,7 @@ export default function HeroActions({ copied, setCopied }: { copied: boolean, se
       <Button
         variant="primary"
         size="lg"
-        href="/about"
+        href="/projects"
         className="group font-wenkai font-medium"
       >
         <div className="flex items-center gap-3">
