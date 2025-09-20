@@ -107,7 +107,7 @@ const DeveloperInfoPopup = ({ isOpen, onClose }: DeveloperInfoPopupProps) => {
                     >
                         {/* Header */}
                         <div className="mb-6 text-lg font-bold text-terminal-green animate-pulse">
-                            sudo pacman -S profile-image
+                            Hello there!
                         </div>
 
                         {/* Image */}
@@ -122,10 +122,7 @@ const DeveloperInfoPopup = ({ isOpen, onClose }: DeveloperInfoPopupProps) => {
 
                         {/* Footer */}
                         <div className="mt-6 text-sm text-terminal-muted space-y-2">
-                            <span className="block">🦀 Running: <span className="text-terminal-green">cargo run --future-vision</span></span>
-                            <div className="w-full h-2 bg-terminal-border rounded-full overflow-hidden">
-                                <div className="h-full bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 animate-[progress_3s_linear_infinite]" />
-                            </div>
+                            Get to know me better!
                         </div>
 
                     </motion.div>

@@ -221,6 +221,7 @@ const TreeSection = ({ title, items, category, defaultExpanded = false }: TreeSe
                                                        ${category === 'experience' ? 'border-l-green-500' : ''}
                                                        ${category === 'awards' ? 'border-l-yellow-500' : ''} border-l-4`
                                                 }
+                                                hover:border-terminal-green
                                             `}
                                         >
                                             <div className="space-y-3">

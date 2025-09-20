@@ -67,7 +67,7 @@ const Badge = ({
     const variantStyles = {
         default: 'bg-surface text-primary border border-brd',
         secondary: 'bg-surface-secondary text-secondary border border-brd',
-        accent: 'bg-accent text-btn-accent border-0',
+        accent: 'bg-blue-500 text-white border-0',
         success: 'bg-success text-white border-0',
         warning: 'bg-warning text-black border-0',
         error: 'bg-error text-white border-0',

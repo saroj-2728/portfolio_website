@@ -1,6 +1,6 @@
 'use client'
 import PageContainer from '@/components/layout/PageContainer'
-import { HeroSection, InteractiveSection, GithubContributionGraph } from "@/components/sections/home";
+import { HeroSection, InteractiveSection } from "@/components/sections/home";
 import { useState, useEffect } from 'react';
 import ToastContainer, { Toast as ToastType } from '@/components/ui/Toast';
 
@@ -25,7 +25,6 @@ export default function Home() {
       <PageContainer>
         <HeroSection />
         <InteractiveSection />
-        <GithubContributionGraph />
       </PageContainer>
     </>
   );
