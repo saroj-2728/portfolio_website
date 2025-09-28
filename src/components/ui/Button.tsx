@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react'
 import { ReactNode } from 'react'
+import Link from "next/link"
 import { LucideIcon } from 'lucide-react'
 import { IconType } from 'react-icons'
 
@@ -38,6 +39,9 @@ const Button = ({
     onClick,
     type = 'button',
 }: ButtonProps) => {
+
+    // For Link
+    const MotionLink = motion(Link);
 
     // Base styles
     const baseStyles = "relative overflow-hidden font-semibold transition-all duration-300 ease-out cursor-pointer outline-none focus:outline-none select-none inline-flex items-center justify-center gap-2"
@@ -88,7 +92,7 @@ const Button = ({
     const RippleEffect = () => {
         // Only show ripple for secondary and ghost variants
         const shouldShowRipple = ripple && !disabled && !loading && (variant === 'secondary' || variant === 'ghost')
-        
+
         return shouldShowRipple ? (
             <motion.div
                 className="absolute inset-0 bg-white/0 rounded-inherit pointer-events-none"
@@ -97,7 +101,7 @@ const Button = ({
                     transition: { duration: 0.3, ease: "easeOut" }
                 }}
                 initial={{ backgroundColor: "rgba(255, 255, 255, 0)" }}
-                exit={{ 
+                exit={{
                     backgroundColor: "rgba(255, 255, 255, 0)",
                     transition: { duration: 0.3, ease: "easeOut" }
                 }}
@@ -123,7 +127,7 @@ const Button = ({
             {Icon && iconPosition === 'left' && !loading && (
                 <Icon size={iconSizes[size]} />
             )}
-            <span className={loading ? "opacity-0" : "opacity-100"}>
+            <span className={loading ? "opacity-70" : "opacity-100"}>
                 {children}
             </span>
             {Icon && iconPosition === 'right' && !loading && (
@@ -135,7 +139,7 @@ const Button = ({
     // If href is provided, render as link
     if (href && !disabled && !loading) {
         return (
-            <motion.a
+            <MotionLink
                 href={href}
                 className={combinedClassName}
                 whileHover={disabled || loading ? {} : { scale: 1.02 }}
@@ -146,7 +150,7 @@ const Button = ({
                 <div className="relative flex items-center gap-2">
                     <ButtonContent />
                 </div>
-            </motion.a>
+            </MotionLink>
         )
     }
 

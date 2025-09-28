@@ -85,7 +85,7 @@ export const socialNavigation: NavItem[] = [
   {
     title: "Instagram",
     keyNav: "I",
-    href: "https://www.instagram.com/_._.saroj._._/",
+    href: "https://www.instagram.com/_sar0j_/",
     icon: <FaInstagram className="size-6 p-0 box-content" />,
   },
 ]
