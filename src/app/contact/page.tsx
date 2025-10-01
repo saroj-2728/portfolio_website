@@ -3,7 +3,10 @@ import { ContactHeader, ContactForm } from "@/components/sections/contact";
 
 const ContactPage = () => {
     return (
-        <PageContainer>
+        <PageContainer
+            maxWidth="md"
+            spacing="sm"
+        >
             {/* Header section */}
             <ContactHeader />
 
