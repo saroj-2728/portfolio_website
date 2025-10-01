@@ -2,7 +2,8 @@
 
 import { devTools, productivityTools } from "@/constants/stack"
 import PageContainer from '@/components/layout/PageContainer'
-import { StackHeader, StackSection, SkillGraph } from "@/components/sections/stack"
+import { Header } from "@/components/sections"
+import { StackSection, SkillGraph } from "@/components/sections/stack"
 
 const TechStack = () => {
     return (
@@ -12,7 +13,10 @@ const TechStack = () => {
         >
 
             {/* Header section */}
-            <StackHeader />
+            <Header
+                title="Stack"
+                description="A selection of technologies and tools that I work with."
+            />
 
             {/* Tool sections */}
             <StackSection

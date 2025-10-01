@@ -2,33 +2,45 @@
 import { motion } from "motion/react"
 import { useScrollAnimation, fadeUpVariants, slideLeftVariants } from "@/hooks/useScrollAnimation";
 
-const StackHeader = () => {
-    const heroAnimation = useScrollAnimation({ threshold: 0.3, triggerOnce: false, bidirectional: true });
+interface HeaderProps {
+    title: string;
+    description: string;
+}
+
+const Header = ({
+    title,
+    description
+}: HeaderProps) => {
+    const headerAnimation = useScrollAnimation({
+        threshold: 0.3,
+        triggerOnce: false,
+        bidirectional: true
+    });
 
     return (
         <motion.header
-            ref={heroAnimation.ref}
+            ref={headerAnimation.ref}
             className="space-y-6"
             initial="hidden"
-            animate={heroAnimation.controls}
+            animate={headerAnimation.controls}
             variants={fadeUpVariants}
         >
             <motion.h1
-                className="text-4xl md:text-5xl font-bold text-primary"
+                className="md:text-5xl text-4xl font-bold text-primary"
                 variants={slideLeftVariants}
                 transition={{ delay: 0.1 }}
             >
-                Stack
+                {title}
             </motion.h1>
             <motion.p
                 className="mt-3 text-xl max-w-3xl"
                 variants={fadeUpVariants}
                 transition={{ delay: 0.2 }}
             >
-                Tools, resources, and software I use daily.
+                {description}
             </motion.p>
         </motion.header>
     )
 }
 
-export default StackHeader;
+export default Header;

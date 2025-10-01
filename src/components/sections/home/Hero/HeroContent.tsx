@@ -15,12 +15,12 @@ export default function HeroContent() {
         "
         variants={fadeUpVariants}
       >
-        I transform <span className="text-primary font-medium">caffeine</span> into
+        I turn <span className="text-primary font-medium">concepts</span> into
         <span className="text-primary font-medium"> code</span>,{" "}
-        <span className="text-primary font-medium">ideas</span> into{" "}
-        <span className="text-primary font-medium">digital reality</span>, and{" "}
-        <span className="text-primary font-medium">bugs</span> into{" "}
-        <span className="text-primary font-medium">features</span> ...
+        <span className="text-primary font-medium">designs</span> into{" "}
+        <span className="text-primary font-medium">experiences</span>, and{" "}
+        <span className="text-primary font-medium">problems</span> into{" "}
+        <span className="text-primary font-medium">possibilities</span> ...
       </motion.p>
     </motion.div>
   );

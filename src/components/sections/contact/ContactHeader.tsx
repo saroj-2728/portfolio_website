@@ -29,7 +29,7 @@ const ContactHeader = () => {
                 variants={fadeUpVariants}
                 transition={{ delay: 0.2 }}
             >
-                Let&apos;s connect! Whether you have a project idea, a question, or just want to chat, I&apos;d love to hear from you.
+                Get in touch with me for collaborations, inquiries, or just a friendly chat.
             </motion.p>
 
             <Button

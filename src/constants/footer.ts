@@ -17,10 +17,6 @@ const indexLinks: FooterLink[] = [
         href: "/projects"
     },
     {
-        title: "Services",
-        href: "/services"
-    },
-    {
         title: "About",
         href: "/about"
     },
@@ -67,7 +63,7 @@ const ConnectLinks: FooterLink[] = [
     },
     {
         title: "X",
-        href: "https://x.com/_saroj27"
+        href: "https://x.com/_saroj27_"
     },
     {
         title: "Discord",

@@ -1,6 +1,7 @@
 'use client'
 import PageContainer from '@/components/layout/PageContainer'
-import { ProjectHeader, ProjectsSection } from "@/components/sections/projects"
+import { Header } from '@/components/sections'
+import { ProjectsSection } from "@/components/sections/projects"
 
 const ProjectsPage = () => {
     return (
@@ -8,7 +9,10 @@ const ProjectsPage = () => {
             spacing='sm'
         >
             {/* Header section */}
-            <ProjectHeader />
+            <Header
+                title="Projects"
+                description="A collection of projects built with passion, precision, and innovation."
+            />
 
             {/* Projects section */}
             <ProjectsSection />

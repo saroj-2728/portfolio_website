@@ -1,5 +1,6 @@
 import PageContainer from '@/components/layout/PageContainer'
-import { AboutHeader, AboutImage, AboutDescription } from "@/components/sections/about"
+import { Header } from '@/components/sections';
+import { AboutImage, AboutDescription } from "@/components/sections/about"
 import { StackSection } from "@/components/sections/stack";
 import { techStack } from '@/constants/stack';
 
@@ -10,7 +11,10 @@ const AboutMe = () => {
             spacing="md"
         >
             {/* Header section */}
-            <AboutHeader />
+            <Header
+                title="About Me"
+                description="Passionate web developer and problem-solver, turning ideas into seamless digital experiences."
+            />
 
             {/* Image Section */}
             <AboutImage />
